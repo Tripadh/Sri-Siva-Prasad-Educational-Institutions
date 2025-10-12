@@ -1,0 +1,598 @@
+/* ============ FOUNDER HERO SECTION ============ */
+.founder-hero {
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  padding: 80px 0;
+  margin-bottom: 0;
+}
+
+.founder-hero-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+.founder-intro {
+  flex: 1;
+  padding-right: 20px;
+}
+
+.founder-main-title {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #111184;
+  margin-bottom: 20px;
+  letter-spacing: -0.02em;
+  font-family: 'Montserrat', Arial, sans-serif;
+}
+
+.founder-name {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2196f3;
+  margin-bottom: 15px;
+  letter-spacing: -0.01em;
+  font-family: 'Montserrat', Arial, sans-serif;
+}
+
+.founder-credentials {
+  font-size: 1.3rem;
+  color: #ff7f15;
+  font-weight: 600;
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+}
+
+.founder-role {
+  font-size: 1.1rem;
+  color: #374151;
+  font-weight: 500;
+  margin-bottom: 0;
+}
+
+.founder-photo-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.founder-main-img {
+  width: 100%;
+  max-width: 400px;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(17, 17, 132, 0.15);
+  border: 4px solid #ffffff;
+  transition: transform 0.3s ease;
+}
+
+.founder-main-img:hover {
+  transform: scale(1.02);
+}
+
+/* ============ ACHIEVEMENTS SECTION ============ */
+.founder-achievements {
+  background: #ffffff;
+  padding: 80px 0;
+  margin: 0;
+}
+
+.achievements-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #111184;
+  text-align: center;
+  margin-bottom: 50px;
+  font-family: 'Montserrat', Arial, sans-serif;
+}
+
+.achievements-grid {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+}
+
+.achievement-card {
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  border-radius: 20px;
+  padding: 40px 20px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(17, 17, 132, 0.08);
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+
+.achievement-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 50px rgba(17, 17, 132, 0.15);
+  border-color: #2196f3;
+}
+
+.achievement-number {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #ff7f15;
+  margin-bottom: 15px;
+  font-family: 'Montserrat', Arial, sans-serif;
+}
+
+.achievement-text {
+  font-size: 1.1rem;
+  color: #374151;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+/* ============ STORY SECTION ============ */
+.founder-story {
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  padding: 80px 0;
+  margin: 0;
+}
+
+.founder-story-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.story-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #111184;
+  text-align: center;
+  margin-bottom: 60px;
+  font-family: 'Montserrat', Arial, sans-serif;
+}
+
+.story-sections {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 40px;
+}
+
+.story-section {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 40px 30px;
+  box-shadow: 0 10px 30px rgba(17, 17, 132, 0.08);
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+
+.story-section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 50px rgba(17, 17, 132, 0.12);
+  border-color: #2196f3;
+}
+
+.story-section h4 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111184;
+  margin-bottom: 20px;
+  font-family: 'Montserrat', Arial, sans-serif;
+}
+
+.story-section p {
+  font-size: 1.1rem;
+  color: #374151;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ============ QUOTE SECTION ============ */
+.founder-quote-section {
+  background: #111184;
+  padding: 80px 0;
+  margin: 0;
+}
+
+.quote-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+  position: relative;
+}
+
+.quote-mark {
+  font-size: 6rem;
+  color: #2196f3;
+  font-family: serif;
+  line-height: 1;
+  margin-bottom: 20px;
+  opacity: 0.3;
+}
+
+.founder-quote-text {
+  font-size: 1.5rem;
+  color: #ffffff;
+  font-style: italic;
+  line-height: 1.6;
+  margin: 0 0 40px 0;
+  font-weight: 400;
+}
+
+.quote-author {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.author-name {
+  font-size: 1.3rem;
+  color: #ff7f15;
+  font-weight: 700;
+  font-family: 'Montserrat', Arial, sans-serif;
+}
+
+.author-title {
+  font-size: 1.1rem;
+  color: #e2e8f0;
+  font-weight: 500;
+}
+
+/* ============ RESPONSIVE STYLES ============ */
+@media (max-width: 1024px) {
+  .founder-hero-content {
+    gap: 40px;
+  }
+  .founder-main-title {
+    font-size: 2.5rem;
+  }
+  .founder-name {
+    font-size: 2rem;
+  }
+  .founder-main-img {
+    max-width: 350px;
+    height: 450px;
+  }
+  .achievements-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 25px;
+  }
+  .story-sections {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .founder-hero {
+    padding: 60px 0;
+  }
+  .founder-hero-content {
+    flex-direction: column;
+    gap: 40px;
+    text-align: center;
+  }
+  .founder-intro {
+    padding-right: 0;
+  }
+  .founder-main-title {
+    font-size: 2.2rem;
+  }
+  .founder-name {
+    font-size: 1.8rem;
+  }
+  .founder-credentials {
+    font-size: 1.1rem;
+  }
+  .founder-main-img {
+    max-width: 300px;
+    height: 400px;
+  }
+  .achievements-title,
+  .story-title {
+    font-size: 2rem;
+  }
+  .achievements-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .achievement-card {
+    padding: 30px 15px;
+  }
+  .achievement-number {
+    font-size: 2.5rem;
+  }
+  .story-sections {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  .story-section {
+    padding: 30px 20px;
+  }
+  .founder-quote-text {
+    font-size: 1.3rem;
+  }
+  .quote-mark {
+    font-size: 4rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .founder-hero {
+    padding: 40px 0;
+  }
+  .founder-hero-content {
+    padding: 0 15px;
+    gap: 30px;
+  }
+  .founder-main-title {
+    font-size: 1.8rem;
+  }
+  .founder-name {
+    font-size: 1.5rem;
+  }
+  .founder-credentials {
+    font-size: 1rem;
+  }
+  .founder-role {
+    font-size: 1rem;
+  }
+  .founder-main-img {
+    max-width: 250px;
+    height: 350px;
+  }
+  .founder-achievements,
+  .founder-story,
+  .founder-quote-section {
+    padding: 50px 0;
+  }
+  .achievements-title,
+  .story-title {
+    font-size: 1.8rem;
+    margin-bottom: 40px;
+  }
+  .achievements-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 0 15px;
+  }
+  .achievement-card {
+    padding: 25px 15px;
+  }
+  .achievement-number {
+    font-size: 2rem;
+  }
+  .achievement-text {
+    font-size: 1rem;
+  }
+  .story-sections {
+    padding: 0 15px;
+  }
+  .story-section {
+    padding: 25px 15px;
+  }
+  .story-section h4 {
+    font-size: 1.3rem;
+  }
+  .story-section p {
+    font-size: 1rem;
+  }
+  .founder-quote-text {
+    font-size: 1.1rem;
+  }
+  .quote-mark {
+    font-size: 3rem;
+  }
+  .author-name {
+    font-size: 1.1rem;
+  }
+  .author-title {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .founder-main-title {
+    font-size: 1.6rem;
+  }
+  .founder-name {
+    font-size: 1.3rem;
+  }
+  .founder-credentials {
+    font-size: 0.9rem;
+  }
+  .founder-main-img {
+    max-width: 200px;
+    height: 300px;
+  }
+  .achievements-title,
+  .story-title {
+    font-size: 1.5rem;
+  }
+  .achievement-number {
+    font-size: 1.8rem;
+  }
+  .achievement-text {
+    font-size: 0.9rem;
+  }
+  .story-section h4 {
+    font-size: 1.2rem;
+  }
+  .story-section p {
+    font-size: 0.95rem;
+  }
+  .founder-quote-text {
+    font-size: 1rem;
+  }
+  .quote-mark {
+    font-size: 2.5rem;
+  }
+}
+/* ============ Faculty Section Main ============ */
+.faculty-section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 4vw 48px 4vw;
+  background: #fafdff;
+  border-radius: 16px;
+  box-shadow: 0 6px 28px rgba(60,100,130,0.10);
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color: #31436d;
+}
+
+/* ============ Top Logo Block ============ */
+.faculty-top-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 32px 0;
+  width: 100%;
+}
+
+/* Logo Image Styling */
+.faculty-logo {
+  width: 340px;             /* Adjust for bigger logo: try 400px, 480px, etc. */
+  max-width: 95vw;
+  height: auto;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 4px 28px rgba(60,100,130,0.13);
+  border: 2px solid #e1eafd;
+  background: #fff;
+}
+
+/* ============ Title & Intro ============ */
+.faculty-title {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: #0d357a;
+  margin-bottom: 1.4rem;
+  letter-spacing: 0.025em;
+  text-align: center;
+  font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+}
+
+.faculty-intro {
+  font-size: 1.16rem;
+  line-height: 1.7;
+  color: #31436d;
+  margin-bottom: 2.1rem;
+  text-align: center;
+  font-weight: 500;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ============ Grid & Cards ============ */
+.faculty-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-top: 32px;
+}
+
+.faculty-card {
+  background: #fff;
+  border-radius: 13px;
+  box-shadow: 0 4px 22px rgba(60,100,130,0.09);
+  padding: 28px 20px;
+  transition: box-shadow 0.2s;
+  border: 2px solid #e6eefc;
+}
+
+.faculty-card:hover {
+  box-shadow: 0 8px 38px rgba(40,80,150,0.14);
+  border-color: #c3dcfa;
+}
+
+.faculty-details h3 {
+  font-size: 1.32rem;
+  font-weight: 700;
+  color: #0948b3;
+  margin-bottom: 8px;
+  font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+}
+
+.faculty-designation {
+  font-size: 1.05rem;
+  color: #2258c7;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.faculty-qualification,
+.faculty-experience,
+.faculty-bio {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #31436d;
+  margin-bottom: 8px;
+}
+
+.faculty-bio {
+  font-style: italic;
+  color: #226093;
+}
+
+/* ============ Responsive Styles ============ */
+@media (max-width: 1000px) {
+  .faculty-section {
+    padding: 0 2vw 32px 2vw;
+  }
+  .faculty-title {
+    font-size: 2rem;
+  }
+  .faculty-intro {
+    font-size: 1rem;
+    margin-bottom: 1.1rem;
+  }
+  .faculty-logo {
+    max-width: 320px;
+  }
+  .faculty-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+}
+
+@media (max-width: 700px) {
+  .faculty-section {
+    padding: 0 1vw 16px 1vw;
+    border-radius: 7px;
+  }
+  .faculty-logo {
+    width: 96vw;
+    max-width: 96vw;
+  }
+  .faculty-title {
+    font-size: 1.29rem;
+  }
+  .faculty-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 18px;
+  }
+  .faculty-card {
+    padding: 20px 10px;
+  }
+}
+
+/* Add more tweaks for ultra small screens if needed */
+@media (max-width: 400px) {
+  .faculty-title {
+    font-size: 1.08rem;
+  }
+  .faculty-logo {
+    max-width: 88vw;
+  }
+}

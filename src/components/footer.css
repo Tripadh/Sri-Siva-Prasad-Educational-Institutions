@@ -1,0 +1,132 @@
+.footer {
+  background: #0f0f0f;
+  color: #fff;
+  padding: 60px 0 30px 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1400px;
+  margin: 10px auto;
+  width: 95vw; /* Prevents overflow at large screens */
+}
+
+.footer-col {
+  flex: 1 1 300px;
+  min-width: 220px;
+  margin: 0 14px;
+}
+
+.footer-logo {
+  width: 100%;
+  max-width: 300px;
+  min-width: 100px;
+  margin-bottom: 18px;
+  height: auto;
+  display: block;
+}
+
+.footer-desc {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #fff;
+}
+
+.footer-tagline {
+  color: #FF7300;
+  font-weight: 600;
+  font-size: 19px;
+  margin-bottom: 20px;
+}
+
+.footer-policy {
+  color: #fff;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.footer-heading {
+  font-size: 29px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: #fff;
+  letter-spacing: 0.5px;
+  border-bottom: 3px solid #FF7300;
+  padding-bottom: 5px;
+  display: inline-block;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0px;
+}
+
+.footer-links li {
+  font-size: 18px;
+  font-weight: 500;
+  color: #ccc;
+  margin-bottom: 15px;
+}
+
+.footer-contact-header {
+  font-size: 29px;
+  font-weight: 800;
+  margin-bottom: 18px;
+  color: #fff;
+  letter-spacing: 0.5px;
+}
+
+.footer-contact {
+  font-size: 18px;
+}
+
+.footer-contact p {
+  margin: 7px 0;
+  color: #fff;
+}
+
+.footer-email, .footer-phone {
+  color: #FF7300;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+@media (max-width: 1000px) {
+  .footer-container {
+    flex-direction: column;
+    width: 99vw;
+    max-width: 99vw;
+  }
+  .footer-col {
+    min-width: 150px;
+    margin-bottom: 30px;
+  }
+  .footer-logo {
+    width: 100%;
+    max-width: 180px;
+    margin-bottom: 12px;
+  }
+  .footer-desc,
+  .footer-heading,
+  .footer-contact-header {
+    font-size: 20px;
+  }
+}
+
+.footer-copyright-bar {
+  background: #313133;
+  color: #bebebe;
+  text-align: center;
+  padding: 18px 0 16px 0;
+  font-size: 19px;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  width: 100%;
+  overflow-x: hidden;
+}

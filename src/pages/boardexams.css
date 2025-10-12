@@ -1,0 +1,118 @@
+.board-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 16px 48px 16px;
+  background: #f8fafc;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #1c3059;
+}
+
+.board-hero {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 3px 16px rgba(48,90,170,0.09);
+  text-align: center;
+  padding: 35px 18px 22px 18px;
+  margin-bottom: 30px;
+}
+
+.board-hero h1 {
+  font-size: 2.15rem;
+  font-weight: 700;
+  color: #234380;
+  margin-bottom: 10px;
+}
+
+.board-hero p {
+  font-size: 1.13rem;
+  color: #58667c;
+}
+
+.board-highlights,
+.board-curriculum,
+.board-whyus {
+  background: #eef3fb;
+  border-radius: 12px;
+  padding: 28px 22px 24px 22px;
+  box-shadow: 0 2px 10px rgba(48, 90, 170, 0.10);
+  margin-bottom: 2.1rem;
+}
+
+.board-highlights h2,
+.board-curriculum h2,
+.board-whyus h2 {
+  color: #1747a6;
+  font-size: 1.32rem;
+  font-weight: 600;
+  margin-bottom: 1.05rem;
+  text-align: center;
+}
+
+.board-highlights ul,
+.board-whyus ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.2rem 2rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.board-highlights li,
+.board-whyus li {
+  background: #fff;
+  border-radius: 11px;
+  padding: 1.1em 1.3em;
+  font-size: 1.04rem;
+  font-weight: 500;
+  color: #22346d;
+  box-shadow: 0 1.5px 8px rgba(32, 82, 160, 0.04);
+  text-align: left;
+  transition: background 0.2s, box-shadow 0.18s;
+}
+
+.board-highlights li:hover,
+.board-whyus li:hover {
+  background: #e3ebfb;
+  box-shadow: 0 4px 15px rgba(32,80,160,0.16);
+}
+
+/* Curriculum Section */
+.board-curriculum ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.board-curriculum li {
+  background: #fff;
+  border-radius: 10px;
+  margin-bottom: 0.8em;
+  padding: 0.96em 1.35em;
+  color: #22507e;
+  font-size: 1.04rem;
+  font-weight: 500;
+  box-shadow: 0 1.5px 8px rgba(32, 60, 140, 0.07);
+  transition: background 0.14s, box-shadow 0.12s;
+}
+
+.board-curriculum li:hover {
+  background: #dde7f6;
+}
+
+/* Responsive design */
+@media (max-width: 750px) {
+  .board-highlights ul,
+  .board-whyus ul {
+    grid-template-columns: 1fr;
+    padding: 0 10px;
+  }
+  .board-hero {
+    padding: 20px 8px 10px 8px;
+  }
+  .board-highlights,
+  .board-curriculum,
+  .board-whyus {
+    padding: 13px 5px;
+  }
+}

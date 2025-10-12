@@ -1,0 +1,224 @@
+.neet-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 16px 48px 16px;
+  background: #f9fbfe;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #242f57;
+}
+
+.neet-hero {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(50, 80, 160, 0.1);
+  text-align: center;
+  padding: 36px 24px 28px 24px;
+  margin-bottom: 30px;
+}
+
+.neet-hero h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #0d1f57;
+}
+
+.neet-hero p {
+  font-size: 1.12rem;
+  color: #59697c;
+}
+
+.neet-unique, 
+.neet-inter-unique {
+  background: #f0f6ff;
+  border-radius: 10px;
+  padding: 22px 24px;
+  box-shadow: 0 1.5px 8px rgba(48, 83, 189, 0.18);
+  margin-bottom: 2rem;
+}
+
+.neet-unique h2, 
+.neet-inter-unique h2 {
+  font-size: 1.44rem;
+  font-weight: 600;
+  color: #193a8b;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.neet-unique ul, .neet-inter-unique ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-gap: 1.4rem 1.8rem;
+  justify-items: center;
+}
+
+.neet-unique li, .neet-inter-unique li {
+  background: #ffffffcc; /* slight transparent white */
+  padding: 1rem 1.2rem;
+  border-radius: 12px;
+  color: #224179;
+  font-weight: 500;
+  font-size: 1rem;
+  box-shadow: 0 1px 10px rgb(0 0 0 / 0.1);
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.22s ease;
+  cursor: default;
+}
+
+.neet-unique li:hover, .neet-inter-unique li:hover {
+  background-color: #dde7ff;
+  transform: translateY(-4px);
+}
+
+.curriculum-overview {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 28px 28px 24px 28px;
+  box-shadow: 0 3px 16px rgba(53, 82, 170, 0.12);
+  margin-top: 30px;
+}
+
+.curriculum-overview h3 {
+  font-weight: 650;
+  font-size: 1.38rem;
+  text-align: center;
+  color: #294189;
+  margin-bottom: 1rem;
+}
+
+.curriculum-section {
+  margin-bottom: 1rem;
+}
+
+.curriculum-toggle {
+  width: 100%;
+  font-size: 1.07rem;
+  font-weight: 600;
+  padding: 0.65em 1.1em;
+  border-radius: 8px;
+  border: none;
+  background-color: #e9f0ff;
+  color: #254375;
+  text-align: left;
+  cursor: pointer;
+  box-shadow: 0 0 8px rgb(50 80 160 / 0.05);
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.curriculum-toggle:hover,
+.curriculum-toggle[aria-expanded="true"] {
+  background-color: #cfdfff;
+  color: #0c256d;
+  box-shadow: 0 0 16px rgb(50 80 160 / 0.15);
+}
+
+.curriculum-list {
+  list-style-type: disc;
+  padding-left: 1.6rem;
+  margin-top: 0.4rem;
+  color: #3d4a6a;
+  font-weight: 500;
+  font-size: 1.03rem;
+}
+
+.curriculum-list li {
+  padding: 0.2rem 0;
+}
+
+/* Button Styles for toggle */
+.curriculum-toggle-switch {
+  text-align: right;
+  margin-bottom: 1.7rem;
+}
+
+.btn {
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 0.58rem 1.2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.25s ease;
+}
+
+.btn-secondary {
+  background-color: #2e4c9f;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background-color: #3656b6;
+}
+
+.btn-light {
+  background-color: #e8efff;
+  color: #274379;
+}
+
+.btn-light:hover {
+  background-color: #c7d0ff;
+}
+
+/* Responsive adjustments */
+@media (max-width: 700px) {
+  .neet-unique ul, .neet-inter-unique ul {
+    grid-template-columns: 1fr;
+    padding: 0 8px;
+  }
+}
+.neet-unique ul,
+.neet-inter-unique ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px 18px;
+  justify-content: center; /* Center aligned */
+  padding: 0;
+  list-style: none;
+}
+
+.neet-unique li,
+.neet-inter-unique li {
+  max-width: 320px;
+  min-width: 280px;
+  background: #fff;
+  border-radius: 14px;
+  padding: 22px 18px;
+  box-shadow: 0 3px 8px rgba(40, 60, 120, 0.12);
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #1c2d5a;
+  text-align: left;
+  transition: box-shadow 0.3s ease;
+  cursor: default;
+}
+
+.neet-unique li:hover,
+.neet-inter-unique li:hover {
+  box-shadow: 0 7px 22px rgba(40, 60, 120, 0.25);
+}
+
+.neet-unique h2,
+.neet-inter-unique h2 {
+  margin-bottom: 24px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+  color: #09327c;
+}
+
+@media (max-width: 750px) {
+  .neet-unique li,
+  .neet-inter-unique li {
+    max-width: 90%;
+    min-width: unset;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

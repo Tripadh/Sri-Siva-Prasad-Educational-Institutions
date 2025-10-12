@@ -1,0 +1,143 @@
+.eamcet-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 16px 48px 16px;
+  background: #f9fbfe;
+  font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+  color: #1b2e59;
+}
+
+.eamcet-hero {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 3px 16px rgba(48,90,170,0.09);
+  text-align: center;
+  padding: 34px 18px 24px 18px;
+  margin-bottom: 30px;
+}
+
+.eamcet-hero h1 {
+  font-size: 2.1rem;
+  font-weight: 700;
+  color: #1c3776;
+  margin-bottom: 8px;
+}
+
+.eamcet-hero p {
+  color: #4b5780;
+  font-size: 1.16rem;
+}
+
+.eamcet-highlights,
+.eamcet-curriculum,
+.eamcet-whyus {
+  background: #eef5ff;
+  border-radius: 12px;
+  padding: 28px 24px;
+  box-shadow: 0 2.5px 10px rgba(48, 90, 170, 0.10);
+  margin-bottom: 2rem;
+}
+
+.eamcet-highlights h2,
+.eamcet-curriculum h2,
+.eamcet-whyus h2 {
+  font-size: 1.38rem;
+  font-weight: 600;
+  color: #1953a4;
+  margin-bottom: 1.1rem;
+  text-align: center;
+}
+
+/* List styling */
+.eamcet-highlights ul,
+.eamcet-whyus ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.2rem 2rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.eamcet-highlights li,
+.eamcet-whyus li {
+  background: #fff;
+  border-radius: 11px;
+  padding: 1.1em 1.3em;
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #22356b;
+  box-shadow: 0 1px 6px rgba(32, 80, 160, 0.05);
+  margin-bottom: 0;
+  text-align: left;
+  transition: background 0.18s, box-shadow 0.18s;
+}
+
+.eamcet-highlights li:hover,
+.eamcet-whyus li:hover {
+  background: #e0eafc;
+  box-shadow: 0 4px 18px rgba(32,80,160,0.16);
+}
+
+/* Curriculum collapsible section */
+.eamcet-curriculum h2 {
+  font-size: 1.22rem;
+  color: #1947a4;
+  margin-bottom: 0.85em;
+}
+
+.curriculum-section {
+  margin-bottom: 1.05rem;
+}
+
+.curriculum-toggle {
+  width: 100%;
+  background: #e2edf9;
+  color: #214172;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75em 1.13em;
+  font-size: 1.07rem;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+  box-shadow: 0 0 8px rgba(60, 120, 220, 0.03);
+  margin-bottom: 4px;
+  outline: none;
+  transition: background 0.18s, color 0.18s;
+}
+
+.curriculum-toggle:hover,
+.curriculum-toggle[aria-expanded="true"] {
+  background: #d0e2fa;
+  color: #1550b0;
+}
+
+.curriculum-list {
+  margin-top: 0.33em;
+  padding-left: 1.5em;
+  color: #17346a;
+  font-weight: 500;
+  font-size: 1.01rem;
+}
+
+.curriculum-list li {
+  padding: 0.2em 0;
+}
+
+/* Responsive grid for cards */
+@media (max-width: 750px) {
+  .eamcet-highlights ul,
+  .eamcet-whyus ul {
+    grid-template-columns: 1fr;
+    padding: 0 8px;
+  }
+  .eamcet-hero {
+    padding: 20px 8px 12px 8px;
+  }
+  .eamcet-highlights,
+  .eamcet-curriculum,
+  .eamcet-whyus {
+    padding: 12px 5px;
+  }
+}

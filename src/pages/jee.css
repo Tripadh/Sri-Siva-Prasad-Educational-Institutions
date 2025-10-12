@@ -1,0 +1,404 @@
+.jee-course-container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 18px rgba(34, 112, 181, 0.1);
+}
+
+/* Hero Area */
+.hero-area h1 {
+  font-weight: 700;
+  font-size: 2.5rem;
+  line-height: 1.2;
+  margin-bottom: 0.25rem;
+}
+
+.hero-area p {
+  font-weight: 400;
+  font-size: 1.25rem;
+  opacity: 0.85;
+}
+
+/* Description */
+.description p {
+  line-height: 1.6;
+  max-width: 720px;
+  margin: 0 auto;
+  font-size: 1.125rem;
+}
+
+/* Key Highlights Section */
+.key-highlights {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.highlight-card {
+  background-color: #f0f8ff;
+  color: #226cb3;
+  padding: 1rem 1.25rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(34, 108, 179, 0.15);
+  font-weight: 500;
+  flex: 1 1 280px;
+  min-width: 280px;
+  transition: transform 0.3s ease;
+  cursor: default;
+}
+
+.highlight-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Curriculum Overview Section */
+.curriculum-overview h3 {
+  color: #226cb3;
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.curriculum-section button {
+  background-color: #226cb3;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  width: 100%;
+  font-size: 1.1rem;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.curriculum-section button:hover,
+.curriculum-section button:focus {
+  background-color: #164a75;
+  outline: none;
+}
+
+.curriculum-section ul {
+  background-color: #e6f0fa;
+  margin-top: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0 0 6px 6px;
+  list-style-type: disc;
+}
+
+.curriculum-section ul li {
+  margin-bottom: 0.35rem;
+  color: #214a75;
+  font-size: 1rem;
+}
+
+/* Call to Action Section */
+.call-to-action {
+  text-align: center;
+  margin: 3rem 0;
+}
+
+.call-to-action p {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #226cb3;
+}
+
+.call-to-action .btn {
+  margin: 0 0.5rem;
+  font-weight: 600;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.call-to-action .btn-primary {
+  background-color: #226cb3;
+  border: none;
+  color: white;
+}
+
+.call-to-action .btn-primary:hover {
+  background-color: #164a75;
+}
+
+.call-to-action .btn-outline-primary {
+  background-color: transparent;
+  border: 2px solid #226cb3;
+  color: #226cb3;
+}
+
+.call-to-action .btn-outline-primary:hover {
+  background-color: #226cb3;
+  color: white;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+  .key-highlights {
+    flex-direction: column;
+  }
+
+  .highlight-card {
+    min-width: auto;
+  }
+}
+.jee-course-container {
+  max-width: 950px;
+  margin: 0 auto;
+  padding: 1rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 18px rgba(34, 112, 181, 0.1);
+}
+
+/* Hero Area */
+.hero-area {
+  background: linear-gradient(rgba(34, 112, 181, 0.8), rgba(34, 112, 181, 0.8)), #226cb3;
+  color: #fff;
+  padding: 4rem 1rem;
+  text-align: center;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+}
+.hero-area h1 {
+  font-weight: 700;
+  font-size: 2.5rem;
+  line-height: 1.2;
+}
+.hero-tagline {
+  font-weight: 400;
+  font-size: 1.25rem;
+  opacity: 0.9;
+  margin-top: 0.5rem;
+}
+
+/* Stats Section */
+.stats-section {
+  background: #5c4df3;
+  color: #fff;
+  padding: 2.7rem 0 2.5rem 0;
+  margin: 0 0 2rem 0;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 8px rgba(34, 108, 179, 0.11);
+}
+.stats-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+  max-width: 1150px;
+  margin: 0 auto;
+}
+.stat-box {
+  text-align: center;
+  min-width: 180px;
+}
+.stat-number {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+.stat-label {
+  font-size: 1.25rem;
+  font-weight: 500;
+  opacity: 0.92;
+}
+
+@media (max-width: 950px) {
+  .jee-course-container { max-width: 100%; }
+  .stats-row { gap: 2rem; }
+  .stat-number { font-size: 2.2rem; }
+}
+@media (max-width: 600px) {
+  .stats-row { flex-direction: column; gap: 2rem; }
+  .stat-box { min-width: 120px; }
+}
+
+/* Description */
+.description {
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+.description p {
+  line-height: 1.6;
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+/* Key Highlights */
+.key-highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  justify-content: center;
+}
+.highlight-card {
+  background: #f0f8ff;
+  color: #226cb3;
+  padding: 1rem 1.25rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(34, 112, 181, 0.15);
+  font-weight: 500;
+  flex: 1 1 250px;
+  min-width: 220px;
+  max-width: 290px;
+  transition: transform 0.2s;
+  text-align: center;
+}
+.highlight-card:hover {
+  transform: translateY(-4px);
+}
+
+/* Curriculum Overview */
+.curriculum-overview h3 {
+  color: #226cb3;
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.curriculum-section {
+  margin-bottom: 1rem;
+}
+.curriculum-toggle {
+  background: #226cb3;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  width: 100%;
+  font-size: 1.1rem;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.curriculum-toggle:hover, .curriculum-toggle:focus {
+  background: #164a75;
+  outline: none;
+}
+.curriculum-list {
+  background: #e6f0fa;
+  margin-top: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0 0 6px 6px;
+  list-style-type: disc;
+}
+.curriculum-list li {
+  margin-bottom: 0.3rem;
+  color: #214a75;
+  font-size: 1rem;
+}
+
+/* Call to Action */
+.call-to-action {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.call-to-action p {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #226cb3;
+}
+.curriculum-toggle-switch {
+  text-align: right;
+  margin-bottom: 1.5rem;
+}
+
+/* "View Curriculum Overview" secondary style */
+.btn.btn-secondary {
+  background-color: #4267b2;
+  color: #fff;
+  border: none;
+  font-weight: 600;
+  padding: 0.45rem 1.2rem;
+  border-radius: 6px;
+  box-shadow: 0 1px 6px rgba(67,103,178,0.09);
+  transition: background 0.17s, color 0.17s;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.btn.btn-secondary:hover,
+.btn.btn-secondary:focus {
+  background-color: #2b4370;
+  color: #fff;
+}
+
+/* "Back to JEE Overview" light outline style */
+.btn.btn-light {
+  background-color: #f9fafc;
+  color: #2b4370;
+  border: 1px solid #c2c8d6;
+  font-weight: 500;
+  padding: 0.45rem 1.15rem;
+  border-radius: 6px;
+  box-shadow: 0 1px 4px #d0d7e6;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.btn.btn-light:hover,
+.btn.btn-light:focus {
+  background-color: #e1ecfa;
+  color: #174172;
+  border-color: #4285f4;
+}
+.highlight-title {
+  font-weight: 750;
+  color: #226cb3;
+}
+.highlight-dash {
+  font-weight: 400;
+  color: #5b5b5b;
+}
+.unique-features-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  margin: 24px 0 36px 0;
+  padding: 0 10px;
+}
+
+.unique-feature-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(80, 86, 182, 0.10);
+  border: 1px solid #f2f2f2;
+  padding: 28px 24px 20px 24px;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.18s ease, transform 0.18s ease;
+}
+
+.unique-feature-card:hover {
+  box-shadow: 0 6px 24px rgba(64, 80, 182, 0.12), 0 1.5px 8px rgba(30, 80, 162, 0.06);
+  transform: translateY(-4px) scale(1.015);
+}
+
+.unique-feature-title {
+  font-size: 1.13rem;
+  font-weight: 600;
+  color: #193469;
+  margin-bottom: 0.28em;
+}
+
+.unique-feature-desc {
+  font-size: 1rem;
+  color: #555c6b;
+  margin-top: 2px;
+  line-height: 1.45;
+}
+
+/* You may want to add your own .btn classes or use Bootstrap for buttons */
