@@ -7,7 +7,7 @@ import slide2 from '../assets/slide-2.1.jpg';
 import slide3 from '../assets/slide-3.png';
 import slide4 from '../assets/slide-4.jpg';
 import slide5 from '../assets/slide-5.png';
-import slide6 from '../assets/slide-6.png';
+
 import building from '../assets/building.png';
 import foter from '../assets/foter.png';
 // Success stories images
@@ -220,7 +220,6 @@ export default function Home() {
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3" />
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4" />
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5" />
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5" aria-label="Slide 6" />
           </div>
           <div className="carousel-inner">
             <div className="carousel-item active">
@@ -238,9 +237,6 @@ export default function Home() {
             <div className="carousel-item">
               <img src={slide5} className="d-block w-100" alt="Fifth Slide" />
             </div>
-            <div className="carousel-item">
-              <img src={slide6} className="d-block w-100" alt="Sixth Slide" />
-            </div>
           </div>
           <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
             <span className="carousel-control-prev-icon" aria-hidden="true" />
@@ -252,11 +248,11 @@ export default function Home() {
           </button>
         </div>
       </div>
-      <div className="marquee-container">
-        <marquee behavior="scroll" direction="left" scrollamount="5">
-          <strong>Admissions Open for 2025–26! Enroll now and secure your seat at Sri Siva Prasad Educational Institution. Applications close on Soon— don’t miss your chance to join a legacy of excellence!</strong>
-        </marquee>
-      </div>
+       <div className="marquee-container">
+  <marquee behavior="scroll" direction="left" scrollamount="5">
+    <strong>Admissions Open for 2025–26! Enroll now and secure your seat at Sri Siva Prasad Educational Institution. Applications close on Soon— don’t miss your chance to join a legacy of excellence!</strong>
+  </marquee>
+</div>
 
       <div className="home-banner-message">
         <h2 className="home-banner-title">
