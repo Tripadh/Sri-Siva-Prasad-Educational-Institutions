@@ -1,18 +1,30 @@
-# React + Vite
+Sri Siva Prasad Educational Institutions Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to the official website of Sri Siva Prasad Educational Institutions! This project brings a modern, responsive, and interactive online presence for the institution, built using React + Vite and deployed live for everyone to access.
 
-Currently, two official plugins are available:
+🌟 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Clean, modern design – Intuitive interface with responsive layouts for all devices.
 
-## React Compiler
+Fast and reactive – Powered by React components and Vite’s lightning-fast development server with hot reload.
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+Code quality enforced – ESLint rules ensure readable, maintainable code.
 
-Note: This will impact Vite dev & build performances.
+SEO and performance optimized – Fast loading times and search-friendly structure.
 
-## Expanding the ESLint configuration
+Live deployment – Hosted on Netlify with a custom domain for seamless access.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+🛠 Tech Stack
+
+React – Build interactive and reusable UI components.
+
+Vite – Super-fast build tool with Hot Module Replacement (HMR).
+
+Netlify – Continuous deployment and hosting on a custom domain.
+
+ESLint – Maintain clean, consistent code across the project.
+
+🚀 Live Website
+
+Check it out here: www.srisivaprasadinstitution.com
+ 🌐
