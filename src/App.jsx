@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';  // Import Analytics
 import Navbar from './pages/Navbar';
 import Home from './pages/Home';
 import About from './pages/About';
@@ -10,7 +11,7 @@ import EamcetCourses from './pages/eamcet';
 import BoardExams from './pages/boardExams';
 import NeetLongTerm from './pages/neetlong';
 import Faculty from './pages/faculty';
-import Contact from './pages/contact'; // <-- Import the Contact component
+import Contact from './pages/contact'; // Import Contact component
 
 function Management() {
   return (
@@ -41,11 +42,13 @@ export default function App() {
         <Route path="/board-exams" element={<BoardExams />} />
         <Route path="/neet-longterm" element={<NeetLongTerm />} />
 
-        <Route path="/contact" element={<Contact />} /> {/* <-- Contact route updated */}
+        <Route path="/contact" element={<Contact />} />
 
         {/* 404 fallback for unmatched routes */}
         <Route path="*" element={<div className="container mt-5"><h2>404 Not Found</h2></div>} />
       </Routes>
+
+      <Analytics />  {/* Insert Analytics component here */}
     </Router>
   );
 }
