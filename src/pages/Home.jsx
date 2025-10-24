@@ -250,7 +250,7 @@ export default function Home() {
       </div>
        <div className="marquee-container">
   <marquee behavior="scroll" direction="left" scrollamount="5">
-    <strong>Admissions Open for 2025–26! Enroll now and secure your seat at Sri Siva Prasad Educational Institution. Applications close on Soon— don’t miss your chance to join a legacy of excellence!</strong>
+    <strong>Admissions Open for 2026–27! Enroll now and secure your seat at Sri Siva Prasad Educational Institution. Applications close on Soon— don’t miss your chance to join a legacy of excellence!</strong>
   </marquee>
 </div>
 
