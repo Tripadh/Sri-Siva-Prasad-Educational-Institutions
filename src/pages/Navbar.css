@@ -366,4 +366,74 @@ html, body {
   color: #169be0;
   background: #f6fafd;
 }
+/* =======================
+   MOBILE MENU BUTTON
+   (Smaller size, fits beside logo)
+   ======================= */
+.mobile-menu-button {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: #0d47a1;
+  color: white;
+  padding: 6px 10px;         /* smaller padding */
+  border-radius: 6px;
+  font-size: 0.78rem;        /* smaller text */
+  font-weight: 600;
+  border: none;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+  transition: 0.25s ease;
+  white-space: nowrap;       /* keeps button from wrapping */
+}
+
+.mobile-menu-button:hover {
+  background: #0b3d8a;
+  transform: translateY(-2px);
+}
+
+.menu-text {
+  font-size: 0.78rem;
+  letter-spacing: 0.3px;
+}
+
+.menu-arrow {
+  font-size: 0.9rem;
+  margin-top: -1px;
+}
+
+/* =======================
+   FORCE CONTAINER ALIGNMENT
+   Keeps logo + button in one row
+   ======================= */
+@media (max-width: 991px) {
+  .navbar .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;   /* makes both sit side-by-side */
+  }
+}
+
+/* =======================
+   LOGO SIZE FIX (Mobile)
+   ======================= */
+@media (max-width: 450px) {
+  .navbar-brand img {
+    height: 70px !important;   /* smaller logo */
+  }
+}
+
+@media (max-width: 350px) {
+  .navbar-brand img {
+    height: 60px !important;   /* even smaller on tiny screens */
+  }
+}
+
+/* =======================
+   HIDING MOBILE BUTTON ON DESKTOP
+   ======================= */
+@media (min-width: 992px) {
+  .mobile-menu-button {
+    display: none;
+  }
+}
 

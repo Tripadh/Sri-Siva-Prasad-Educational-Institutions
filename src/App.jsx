@@ -1,5 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { Analytics } from '@vercel/analytics/react';  // Import Analytics
+import { Analytics } from '@vercel/analytics/react';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';  // Bootstrap JS for menu & carousel
+
 import Navbar from './pages/Navbar';
 import Home from './pages/Home';
 import About from './pages/About';
@@ -11,7 +13,10 @@ import EamcetCourses from './pages/eamcet';
 import BoardExams from './pages/boardExams';
 import NeetLongTerm from './pages/neetlong';
 import Faculty from './pages/faculty';
-import Contact from './pages/contact'; // Import Contact component
+import Contact from './pages/contact';
+
+// ⭐ ADDED: ScrollToTop import (fixes footer quick links not scrolling up)
+import ScrollToTop from './components/ScrollToTop';   // <-- FIX ADDED HERE
 
 function Management() {
   return (
@@ -26,6 +31,10 @@ export default function App() {
   return (
     <Router>
       <Navbar />
+
+      {/* ⭐ ADDED: Auto-scroll to top on page change */}
+      <ScrollToTop />   {/* <-- FIX ADDED HERE */}
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
@@ -44,11 +53,18 @@ export default function App() {
 
         <Route path="/contact" element={<Contact />} />
 
-        {/* 404 fallback for unmatched routes */}
-        <Route path="*" element={<div className="container mt-5"><h2>404 Not Found</h2></div>} />
+        {/* 404 Fallback */}
+        <Route
+          path="*"
+          element={
+            <div className="container mt-5">
+              <h2>404 Not Found</h2>
+            </div>
+          }
+        />
       </Routes>
 
-      <Analytics />  {/* Insert Analytics component here */}
+      <Analytics /> 
     </Router>
   );
 }

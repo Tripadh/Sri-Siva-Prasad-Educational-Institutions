@@ -7,6 +7,8 @@ import slide2 from '../assets/slide-2.1.jpg';
 import slide3 from '../assets/slide-3.png';
 import slide4 from '../assets/slide-4.jpg';
 import slide5 from '../assets/slide-5.png';
+import slide6 from '../assets/slide-6.png';
+import slide7 from '../assets/slide-7.jpg';
 
 import building from '../assets/building.png';
 import foter from '../assets/foter.png';
@@ -19,67 +21,69 @@ import photo5 from '../assets/sarath.png';
 import photo6 from '../assets/pardhu.png';
 import photo7 from '../assets/manoj.png';
 import photo8 from '../assets/mok.png';
+
 const stories = [
   {
     image: photo1,
     score: '651/720',
-    exam: 'NEET ',
+    exam: 'NEET',
     name: 'Shreyas Medasani',
-    message: "I studied at Sri Siva Prasad Institute and honestly, the teaching here made all the difference. The constant tests, clear concepts, and doubt sessions really pushed me forward, and I ended up scoring 651 in NEET. If you’re serious about cracking NEET, this place gives you the right push and confidence!”"
+    // FIXED: removed stray/curly quote that broke the JS string
+    message: "I studied at Sri Siva Prasad Institute and honestly, the teaching here made all the difference. The constant tests, clear concepts, and doubt sessions really pushed me forward, and I ended up scoring 651 in NEET. If you’re serious about cracking NEET, this place gives you the right push and confidence!"
   },
   {
     image: photo2,
     score: '645/720',
-    exam: 'Neet ',
+    exam: 'NEET',
     name: 'V.Videep Sri NagaSai',
     message: "When I first joined Sri Siva Prasad Institute, I was just an ordinary student filled with doubts and fear. The teachers treated me like family, encouraged me every single day, and stood by me through my struggles. Because of their support and guidance, I scored 651 in NEET, something I once thought was impossible."
   },
   {
     image: photo3,
     score: '615/720',
-    exam: 'Neet ',
+    exam: 'NEET',
     name: 'P.Sai Sree Harshit',
-    message: "Sri Siva Prasad Institute gave me the structure, focus and confidence I needed to excel . Scoring 615 was not just about hard work, it was about smart strategy. With constant guidance, regular mocks and targeted revisions, I always knew what to improve and how to get there."
+    message: "Sri Siva Prasad Institute gave me the structure, focus and confidence I needed to excel. Scoring 615 was not just about hard work, it was about smart strategy. With constant guidance, regular mocks and targeted revisions, I always knew what to improve and how to get there."
   },
   {
     image: photo5,
     score: '99.63/100',
-    exam: 'JEE Mains ',
-    name: 'Y. Sarath Chaityana ',
+    exam: 'JEE Mains',
+    name: 'Y. Sarath Chaityana',
     message: "I scored 99.63 in JEE Mains Chemistry. It’s a proud and unforgettable moment for me and my family. The disciplined environment, approachable teachers, and constant support at Sri Siva Prasad Institute truly made all the difference in my preparation."
   },
   {
     image: '',
     score: '94.39/100',
-    exam: 'JEE Mains ',
+    exam: 'JEE Mains',
     name: 'N.Yeshwitha',
     message: "Joining Sri Siva Prasad Institute was the best decision I made for my JEE preparation. The teachers here are not just knowledgeable but genuinely care about your success. Their personalized attention, regular tests, and doubt-clearing sessions helped me stay on track and focused. Scoring 94.39 in JEE Mains is a testament to their dedication and my hard work."
   },
   {
     image: photo6,
     score: '90.77/100',
-    exam: 'JEE Mains ',
+    exam: 'JEE Mains',
     name: 'N.N.Pardhu',
     message: "Scoring 90.77 in JEE Mains was a dream come true for me, and I owe it all to Sri Siva Prasad Institute. The structured study plans, regular mock tests, and personalized feedback helped me identify my strengths and weaknesses. The teachers were always available to clarify doubts and provide guidance, making my preparation smooth and effective."
   },
   {
     image: photo4,
     score: '606/720',
-    exam: 'NEET ',
+    exam: 'NEET',
     name: 'Syed Sammera',
     message: "I still remember the day I got my NEET results - scoring 606 felt surreal! The journey at Sri Siva Prasad Institute was filled with challenges, but the unwavering support from teachers and the structured approach to learning made all the difference. Their focus on concept clarity and regular assessments kept me on track, and I couldn’t be more grateful for their guidance."
   },
   {
     image: photo7,
     score: '542/720',
-    exam: 'NEET ',
+    exam: 'NEET',
     name: 'Kolli Moanoj',
     message: "Scoring 542 in NEET was a significant achievement for me, and I attribute it to the exceptional guidance I received at Sri Siva Prasad Institute. The teachers here are not just educators but mentors who genuinely care about your success. Their personalized attention, regular tests, and doubt-clearing sessions helped me stay focused and motivated throughout my preparation."
   },
   {
     image: photo8,
     score: '591/720',
-    exam: 'NEET ',
+    exam: 'NEET',
     name: 'T.Mokshagana',
     message: "Joining Sri Siva Prasad Institute was a turning point in my NEET preparation. The supportive environment, approachable teachers, and structured study plans made all the difference. Their focus on concept clarity and regular assessments helped me stay on track, and I’m proud to say I scored 591 in NEET."
   },
@@ -88,7 +92,7 @@ const stories = [
 const SuccessStoryCard = ({ image, score, exam, name, message }) => (
   <div className="ssc-card">
     <div className="ssc-card-img-wrap">
-      {image && <img src={image} alt={name} className="ssc-card-img" />}
+      {image ? <img src={image} alt={name} className="ssc-card-img" /> : null}
     </div>
     <div className="ssc-card-score">
       <span>{score}</span>
@@ -104,18 +108,17 @@ const CARDS_PER_SLIDE = 3;
 
 const SuccessStories = () => {
   const [startIdx, setStartIdx] = useState(0);
-
   const storiesCount = stories.length;
   const canSlide = storiesCount > CARDS_PER_SLIDE;
 
+  // FIXED: stable interval using functional setState
   useEffect(() => {
     if (!canSlide) return;
     const timer = setInterval(() => {
-      handleNext();
+      setStartIdx(prev => (prev + 1) % storiesCount);
     }, 3000);
     return () => clearInterval(timer);
-    // eslint-disable-next-line
-  }, [startIdx, storiesCount]);
+  }, [canSlide, storiesCount]);
 
   const handlePrev = () => {
     setStartIdx(prev => (prev - 1 + storiesCount) % storiesCount);
@@ -133,7 +136,7 @@ const SuccessStories = () => {
 
   return (
     <section className="ssc-section">
-      <h2 className="ssc-title">--------  OUR SUCCESS STORIES  --------</h2>
+      <h2 className="ssc-title">--------  OUR SUCCESS STORIES  --------</h2>
       <div className="ssc-carousel-row">
         <button className="ssc-arrow ssc-arrow-left" onClick={handlePrev} disabled={!canSlide}>&lt;</button>
         <div className="ssc-cards-row">
@@ -210,34 +213,41 @@ const FooterCopyrightBar = () => (
 );
 
 export default function Home() {
+  // FIXED: put slides into an array and render dynamically so count is correct
+  const carouselSlides = [slide1, slide2, slide3, slide4, slide5, slide6, slide7];
+
   return (
     <>
       <div className="fullscreen-carousel">
-        <div id="carouselExampleIndicators" className="carousel slide" data-bs-ride="carousel">
+        <div
+          id="carouselExampleIndicators"
+          className="carousel slide"
+          data-bs-ride="carousel"
+          data-bs-wrap="true"
+        >
+          {/* indicators rendered dynamically to match number of slides */}
           <div className="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1" />
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2" />
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3" />
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4" />
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5" />
+            {carouselSlides.map((_, idx) => (
+              <button
+                key={idx}
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide-to={idx}
+                className={idx === 0 ? 'active' : ''}
+                aria-current={idx === 0 ? 'true' : undefined}
+                aria-label={`Slide ${idx + 1}`}
+              />
+            ))}
           </div>
+
           <div className="carousel-inner">
-            <div className="carousel-item active">
-              <img src={slide1} className="d-block w-100" alt="First Slide" />
-            </div>
-            <div className="carousel-item">
-              <img src={slide2} className="d-block w-100" alt="Second Slide" />
-            </div>
-            <div className="carousel-item">
-              <img src={slide3} className="d-block w-100" alt="Third Slide" />
-            </div>
-            <div className="carousel-item">
-              <img src={slide4} className="d-block w-100" alt="Fourth Slide" />
-            </div>
-            <div className="carousel-item">
-              <img src={slide5} className="d-block w-100" alt="Fifth Slide" />
-            </div>
+            {carouselSlides.map((img, idx) => (
+              <div key={idx} className={`carousel-item ${idx === 0 ? 'active' : ''}`}>
+                <img src={img} className="d-block w-100" alt={`Slide ${idx + 1}`} />
+              </div>
+            ))}
           </div>
+
           <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
             <span className="carousel-control-prev-icon" aria-hidden="true" />
             <span className="visually-hidden">Previous</span>
@@ -248,11 +258,12 @@ export default function Home() {
           </button>
         </div>
       </div>
-       <div className="marquee-container">
-  <marquee behavior="scroll" direction="left" scrollamount="5">
-    <strong>Admissions Open for 2026–27! Enroll now and secure your seat at Sri Siva Prasad Educational Institution. Applications close on Soon— don’t miss your chance to join a legacy of excellence!</strong>
-  </marquee>
-</div>
+
+      <div className="marquee-container">
+        <marquee behavior="scroll" direction="left" scrollamount="5">
+          <strong>Admissions Open for 2026–27! Enroll now and secure your seat at Sri Siva Prasad Educational Institution. Applications close on Soon— don’t miss your chance to join a legacy of excellence!</strong>
+        </marquee>
+      </div>
 
       <div className="home-banner-message">
         <h2 className="home-banner-title">

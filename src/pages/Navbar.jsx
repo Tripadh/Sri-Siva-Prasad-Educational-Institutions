@@ -18,6 +18,7 @@ export default function Navbar() {
           />
         </Link>
 
+        {/* Desktop WhatsApp + Call */}
         <div className="d-none d-lg-flex flex-column align-items-end ms-auto gap-2 order-lg-2">
           <a
             href="https://wa.me/918688124113"
@@ -39,10 +40,10 @@ export default function Navbar() {
           </a>
         </div>
 
-        {/* Mobile hamburger toggler */}
+        {/* ⭐ MOBILE "VIEW MORE ▾" BUTTON — replaced hamburger */}
         <div className="d-flex d-lg-none align-items-center ms-auto order-lg-2">
           <button
-            className="navbar-toggler ms-2"
+            className="mobile-menu-button"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarNav"
@@ -50,10 +51,12 @@ export default function Navbar() {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span className="navbar-toggler-icon"></span>
+            <span className="menu-text">VIEW MORE</span>
+            <span className="menu-arrow">▾</span>
           </button>
         </div>
 
+        {/* Collapsible Menu */}
         <div className="collapse navbar-collapse order-lg-1" id="navbarNav">
           <ul className="navbar-nav ms-auto">
 
@@ -89,24 +92,16 @@ export default function Navbar() {
                 Our Courses
               </button>
               <ul className="dropdown-menu" aria-labelledby="coursesDropdown">
-                <li>
-    <Link to="/jee" className="dropdown-item">JEE (Main & Advanced)</Link>
-  </li>
-                <li>
-                  <Link to="/neet" className="dropdown-item">Neet</Link>
-                </li>
-                <li>
-                  <Link to="/eamcet" className="dropdown-item">Eamcet</Link>
-                </li>
-                <li>
-                  <Link to="/board-exams" className="dropdown-item">Board Exams</Link>
-                </li>
+                <li><Link to="/jee" className="dropdown-item">JEE (Main & Advanced)</Link></li>
+                <li><Link to="/neet" className="dropdown-item">Neet</Link></li>
+                <li><Link to="/eamcet" className="dropdown-item">Eamcet</Link></li>
+                <li><Link to="/board-exams" className="dropdown-item">Board Exams</Link></li>
               </ul>
             </li>
 
             <li className="nav-item">
-  <Link to="/neet-longterm" className="nav-link">Neet Long-Term</Link>
-</li>
+              <Link to="/neet-longterm" className="nav-link">Neet Long-Term</Link>
+            </li>
 
             <li className="nav-item">
               <Link to="/faculty" className="nav-link">Faculty</Link>
@@ -116,7 +111,7 @@ export default function Navbar() {
               <Link to="/contact" className="nav-link">Contact Us</Link>
             </li>
 
-            {/* WhatsApp & Phone buttons for mobile */}
+            {/* Mobile WhatsApp + Call */}
             <li className="nav-item d-lg-none mt-2">
               <a
                 href="https://wa.me/918688124113"
