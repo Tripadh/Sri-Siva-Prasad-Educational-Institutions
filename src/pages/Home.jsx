@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 
+
 import './Home.css';
 import slide1 from '../assets/slide-1.png';
 import slide2 from '../assets/slide-2.1.jpg';
@@ -92,7 +93,7 @@ const stories = [
 const SuccessStoryCard = ({ image, score, exam, name, message }) => (
   <div className="ssc-card">
     <div className="ssc-card-img-wrap">
-      {image ? <img src={image} alt={name} className="ssc-card-img" /> : null}
+      {image ? <img src={image} alt={name} loading="lazy" className="ssc-card-img" /> : null}
     </div>
     <div className="ssc-card-score">
       <span>{score}</span>
@@ -163,7 +164,7 @@ const Footer = () => (
   <footer className="footer">
     <div className="footer-container">
       <div className="footer-col footer-branding">
-        <img src={foter} alt="Sri Siva Prasad Logo" className="footer-logo" />
+        <img src={foter} alt="Sri Siva Prasad Logo"   loading="lazy" className="footer-logo" />
         <p className="footer-desc">
           Sri Siva Prasad Educational Institute, a premier institution nurturing excellence, has been inspiring academic success across Vijayawada and neighboring regions since 2016.
         </p>
@@ -243,7 +244,7 @@ export default function Home() {
           <div className="carousel-inner">
             {carouselSlides.map((img, idx) => (
               <div key={idx} className={`carousel-item ${idx === 0 ? 'active' : ''}`}>
-                <img src={img} className="d-block w-100" alt={`Slide ${idx + 1}`} />
+                <img src={img}   loading="lazy" className="d-block w-100" alt={`Slide ${idx + 1}`} />
               </div>
             ))}
           </div>
@@ -259,11 +260,17 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="marquee-container">
-        <marquee behavior="scroll" direction="left" scrollamount="5">
-          <strong>Admissions Open for 2026–27! Enroll now and secure your seat at Sri Siva Prasad Educational Institution. Applications close on Soon— don’t miss your chance to join a legacy of excellence!</strong>
-        </marquee>
-      </div>
+      <div className="announcement-bar">
+  <div className="announcement-track">
+    <span>
+      🎓 Admissions Open for 2026–27! Enroll now and secure your seat at Sri Siva Prasad Educational Institution. Applications closing soon — don’t miss your chance to join a legacy of excellence!
+    </span>
+    <span>
+      🎓 Admissions Open for 2026–27! Enroll now and secure your seat at Sri Siva Prasad Educational Institution. Applications closing soon — don’t miss your chance to join a legacy of excellence!
+    </span>
+  </div>
+</div>
+
 
       <div className="home-banner-message">
         <h2 className="home-banner-title">
@@ -278,7 +285,7 @@ export default function Home() {
 
       <div className="home-about-section">
         <div className="home-about-left">
-          <img src={building} alt="Sri Siva Prasad Building" />
+          <img src={building}   loading="lazy" alt="Sri Siva Prasad Building" />
         </div>
         <div className="home-about-right">
           <h2>Sri Siva Prasad Educational Group</h2>

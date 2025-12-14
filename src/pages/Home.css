@@ -1044,3 +1044,65 @@ html {
   display: block;
   padding-left: 100%;
 }
+
+
+/* ===== Announcement / Marquee Replacement ===== */
+
+.announcement-bar {
+  width: 100%;
+  overflow: hidden;
+  background: linear-gradient(90deg, #ffffff, #ffffff);
+  color: #000000;
+  padding: 12px 0;
+  position: relative;
+}
+
+.announcement-track {
+  display: flex;
+  width: max-content;
+  animation: scroll-left 18s linear infinite;
+}
+
+.announcement-track span {
+  white-space: nowrap;
+  padding-right: 60px;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+/* Animation */
+@keyframes scroll-left {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Pause on hover (feels premium) */
+.announcement-bar:hover .announcement-track {
+  animation-play-state: paused;
+}
+
+/* Mobile tweak */
+@media (max-width: 768px) {
+  .announcement-track span {
+    font-size: 0.9rem;
+  }
+}
+/* ===== HERO CAROUSEL RESPONSIVE ===== */
+
+.fullscreen-carousel img {
+  height: 90vh;
+  object-fit: cover;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .fullscreen-carousel img {
+    height: 60vh;
+  }
+
+  
+}
