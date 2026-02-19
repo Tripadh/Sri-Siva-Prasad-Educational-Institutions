@@ -14,7 +14,8 @@
   align-items: flex-start;
   max-width: 1400px;
   margin: 10px auto;
-  width: 95vw; /* Prevents overflow at large screens */
+  width: 95vw;
+  /* Prevents overflow at large screens */
 }
 
 .footer-col {
@@ -75,6 +76,16 @@
   margin-bottom: 15px;
 }
 
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #FF7300;
+}
+
 .footer-contact-header {
   font-size: 29px;
   font-weight: 800;
@@ -92,7 +103,8 @@
   color: #fff;
 }
 
-.footer-email, .footer-phone {
+.footer-email,
+.footer-phone {
   color: #FF7300;
   font-weight: 600;
   font-size: 18px;
@@ -101,22 +113,36 @@
 @media (max-width: 1000px) {
   .footer-container {
     flex-direction: column;
-    width: 99vw;
-    max-width: 99vw;
+    width: 90%;
+    /* Better width for mobile */
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 20px 0;
   }
+
   .footer-col {
-    min-width: 150px;
-    margin-bottom: 30px;
+    min-width: 100%;
+    /* Full width columns */
+    margin: 0 0 30px 0;
+    text-align: center;
+    /* Center align for mobile */
   }
+
   .footer-logo {
-    width: 100%;
-    max-width: 180px;
-    margin-bottom: 12px;
+    margin: 0 auto 15px auto;
+    /* Center logo */
   }
+
+  .footer-heading {
+    border-bottom: 2px solid #FF7300;
+    /* Thinner line */
+    display: inline-block;
+    /* Keep inline for border */
+  }
+
   .footer-desc,
-  .footer-heading,
   .footer-contact-header {
-    font-size: 20px;
+    font-size: 1.1rem;
   }
 }
 

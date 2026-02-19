@@ -23,14 +23,14 @@ export function Footer() {
         <div className="footer-col footer-links">
           <h3 className="footer-heading">Quick Links</h3>
           <ul>
-             <li><Link to="/about">About Us</Link></li>
-                      <li><Link to="/founder">Founder</Link></li>
-                      <li><Link to="/vision">Vision & Mission</Link></li>
-                      <li><Link to="/neet-longterm">Neet Long-term</Link></li>
-                      <li><Link to="/jee">JEE (Mains & Advanced)</Link></li>
-                      <li><Link to="/neet">Neet</Link></li>
-                      <li><Link to="/faculty">Faculty</Link></li>
-                      <li><Link to="/contact">Contact Us</Link></li>
+            <li><Link to="/about">About Us</Link></li>
+            <li><Link to="/founder">Founder</Link></li>
+            <li><Link to="/vision">Vision & Mission</Link></li>
+            <li><Link to="/neet-longterm">Neet Long-term</Link></li>
+            <li><Link to="/jee">JEE (Mains & Advanced)</Link></li>
+            <li><Link to="/neet">Neet</Link></li>
+            <li><Link to="/faculty">Faculty</Link></li>
+            <li><Link to="/contact">Contact Us</Link></li>
           </ul>
         </div>
         <div className="footer-col footer-contact">
@@ -55,7 +55,7 @@ export function Footer() {
 export function FooterCopyrightBar() {
   return (
     <div className="footer-copyright-bar">
-      © Copyright 2025 – Sri Siva Prasad Group All rights Reserved
+      © Copyright 2026 – Sri Siva Prasad Group All rights Reserved
     </div>
   );
 }

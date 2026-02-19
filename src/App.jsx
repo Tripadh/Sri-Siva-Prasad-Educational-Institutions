@@ -3,6 +3,7 @@ import { Analytics } from '@vercel/analytics/react';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';  // Bootstrap JS for menu & carousel
 
 import Navbar from './pages/Navbar';
+import Marquee from './components/Marquee'; // Import Marquee
 import Home from './pages/Home';
 import About from './pages/About';
 import Founder from './pages/founder';
@@ -31,6 +32,7 @@ export default function App() {
   return (
     <Router>
       <Navbar />
+      <Marquee /> {/* Add Marquee below Navbar */}
 
       {/* ⭐ ADDED: Auto-scroll to top on page change */}
       <ScrollToTop />   {/* <-- FIX ADDED HERE */}
@@ -64,7 +66,7 @@ export default function App() {
         />
       </Routes>
 
-      <Analytics /> 
+      <Analytics />
     </Router>
   );
 }

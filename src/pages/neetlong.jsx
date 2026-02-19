@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import "./neetlong.css";
 import { Footer, FooterCopyrightBar } from "../components/footer";
 
@@ -6,296 +6,215 @@ import { Footer, FooterCopyrightBar } from "../components/footer";
 import neetImg1 from "../assets/neetlt.png";
 import neetImg2 from "../assets/hd logo full.jpg";
 
-// --- Carousel Images ---
-const carouselSlides = [
-  {
-    image: "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=1600&q=80",
-    headline: "Achieve NEET Success with Sri Siva Prasad College",
-    subtext: "A comprehensive, guided journey to your medical career.",
-  },
-  {
-    image: "https://images.unsplash.com/photo-1503676382389-4809596d5290?auto=format&fit=crop&w=1600&q=80",
-    headline: "Personalized Mentorship & Doubt Clearing",
-    subtext: "Individual attention to boost your confidence and clarity.",
-  },
-  {
-    image: neetImg1,
-  },
-  {
-    image: neetImg2,
-  },
-  {
-    image: "https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=1600&q=80",
-    headline: "Interactive Learning, Stress-Free Environment",
-    subtext: "Learn, revise, and practice the smart way.",
-  },
-];
-
-const quotes = [
-  "Success is no accident. It is hard work, perseverance, learning, and sacrifice.",
-  "Dream big, work hard, stay focused, and surround yourself with good people.",
-  "Your only limit is your mind. Strive for progress, not perfection.",
-  "Don’t watch the clock; do what it does. Keep going.",
-  "Push yourself, because no one else is going to do it for you.",
-];
-
-const features = [
-  "Comprehensive NEET syllabus coverage – All topics explained thoroughly for strong conceptual clarity",
-  "Daily concept-wise classes – Step-by-step learning to build rock-solid fundamentals",
-  "Weekly chapter tests & full-length mocks – Practice that boosts confidence and exam readiness",
-  "Personalized doubt clearing & mentorship – One-on-one guidance to resolve every question",
-  "Stress-free, interactive learning – Engaging teaching methods that make learning enjoyable",
-  "Special sessions for diagrams & practicals – Master biological drawings and experiments with ease",
-  "Time management & exam strategy workshops – Learn smart techniques to maximize scores",
-  "Frequent feedback & progress reports – Keep parents updated on their child’s performance",
-  "Access to previous years’ solved papers – In-depth analysis to understand patterns and trends",
-  "Exclusive lab-work & viva practice support – Hands-on help to excel in Biology practicals",
-  "Error list & mistake tracking – Identify mistakes and turn them into strengths for faster improvement"
-];
-
-const testimonials = [
-  {
-    name: "Shreyas Medasani",
-    score: "651/720",
-    message:
-      "The NEET Long Term program helped me build a strong foundation. The personalized mentorship and regular mocks boosted my confidence greatly.",
-  },
-  {
-    name: "V.Videep Sri NagaSai",
-    score: "645/720",
-    message:
-      "With thorough concepts and guided doubts sessions, I was always prepared for every exam phase.",
-  },
-  {
-    name: "P.Sai Sree Harshit",
-    score: "615/720",
-    message:
-      "The stress-free environment allowed me to learn effectively and score well.",
-  },
-];
-
 export default function NeetLongTerm() {
-  const [carouselIdx, setCarouselIdx] = useState(0);
-  const carouselTimeout = useRef();
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    carouselTimeout.current = setTimeout(() => {
-      setCarouselIdx((prev) => (prev + 1) % carouselSlides.length);
-    }, 4500);
-    return () => clearTimeout(carouselTimeout.current);
-  }, [carouselIdx]);
-
-  const [quoteIdx, setQuoteIdx] = useState(0);
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setQuoteIdx((prev) => (prev + 1) % quotes.length);
-    }, 3500);
-    return () => clearInterval(timer);
-  }, []);
-
-  const [currentTestimonial, setCurrentTestimonial] = useState(0);
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
-    }, 6000);
-    return () => clearInterval(timer);
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
-    <>
-      <div className="neet-wow-container">
-        {/* --- Carousel Section --- */}
-        <section className="neet-carousel">
-          {carouselSlides.map((slide, idx) => (
-            <div
-              key={idx}
-              className={`carousel-slide${carouselIdx === idx ? " active" : ""}`}
-              style={{ backgroundImage: `url(${slide.image})` }}
-            >
-              <div className="carousel-overlay" />
-              <div className="carousel-caption">
-                <h1>{slide.headline}</h1>
-                <p>{slide.subtext}</p>
+    <div className="neet-page-wrapper">
+      {/* --- Ultra-Premium Hero Section --- */}
+      <header className="neet-hero">
+        <div className="hero-overlay"></div>
+        <div className="hero-content">
+          <span className="hero-badge">Admissions Open 2025-26</span>
+          <h1 className="hero-title">
+            Crack NEET with <span className="highlight-text">Certainty</span>
+          </h1>
+          <p className="hero-subtitle">
+            Sri Siva Prasad Educational Institute presents the ultimate Long-Term
+            Program. Expert mentorship, rigorous practice, and a proven path to
+            your dream medical college.
+          </p>
+          {/* Buttons removed as per request */}
+        </div>
+
+        {/* Floating Stats Strip */}
+        <div className="hero-stats-strip">
+          <div className="stat-item">
+            <h3>95%</h3>
+            <p>Qualify Rate</p>
+          </div>
+          <div className="stat-divider"></div>
+          <div className="stat-item">
+            <h3>650+</h3>
+            <p>Top Scores</p>
+          </div>
+          <div className="stat-divider"></div>
+          <div className="stat-item">
+            <h3>1:1</h3>
+            <p>Mentorship</p>
+          </div>
+        </div>
+      </header>
+
+      {/* --- Founder's Vision (Redesigned) --- */}
+      <section className="section-founder">
+        <div className="container">
+          <div className="founder-card">
+            <div className="founder-text">
+              <h2>Founder's Vision</h2>
+              <blockquote>
+                "Education should empower dreams, not stress students. We guide every
+                student with care and purpose to help them learn with confidence."
+              </blockquote>
+              <div className="founder-name">
+                <strong>Ch. Sri Siva Prasad Garu</strong>
+                <span>Founder & Director</span>
               </div>
             </div>
-          ))}
-
-          <div className="carousel-indicators">
-            {carouselSlides.map((_, idx) => (
-              <button
-                key={idx}
-                className={`indicator-dot${carouselIdx === idx ? " active" : ""}`}
-                onClick={() => setCarouselIdx(idx)}
-                aria-label={`Go to slide ${idx + 1}`}
-              />
-            ))}
-          </div>
-        </section>
-      
-
-        {/* --- Motivational Quotation --- */}
-        <section className="neet-quote-section">
-          <blockquote>
-            <span className="quote-mark">“</span>
-            <span className="quote-text">{quotes[quoteIdx]}</span>
-            <span className="quote-mark">”</span>
-          </blockquote>
-        </section>
-
-        {/* --- Founder’s Vision --- */}
-        <section className="neet-section founder-section">
-          <h2 className="wow-title">Founder’s Vision</h2>
-          <p className="founder-quote">
-            Education should empower dreams, not stress students.
-          </p>
-          <p className="founder-desc">
-            At Sri Siva Prasad Educational Institution, we guide every student with care and purpose.
-            Our goal is simple — to help them learn with confidence, stay curious, and reach their NEET dream with a calm and focused mind.
-          </p>
-          <p className="founder-sign">— Ch.Sri Siva Prasad Garu, Founder & Director</p>
-        </section>
-
-        {/* --- Results Snapshot --- */}
-        <section className="neet-section results-section">
-          <h2 className="wow-title">Our Results Speak for Themselves</h2>
-          <div className="results-grid">
-            <div className="result-box">
-              <h3>95%</h3>
-              <p>Students Qualified NEET 2024</p>
-            </div>
-            <div className="result-box">
-              <h3>60+</h3>
-              <p>Students Scored Above 600</p>
-            </div>
-            <div className="result-box">
-              <h3>10+</h3>
-              <p>Students Above 650 Marks</p>
-            </div>
-            <div className="result-box">
-              <h3>3 Years</h3>
-              <p>Consistent Track Record of Excellence</p>
+            <div className="founder-visual">
+              {/* Use a specialized graphic or abstract shape here if no photo */}
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* --- Features Section --- */}
-        <section className="neet-section features-section">
-          <h2 className="wow-title">Program Features</h2>
-          <div className="features-list feature-grid">
-            {features.map((feature, idx) => (
-              <div key={idx} className="feature-card">
-                <span className="feature-icon">
-                  {idx % 2 === 0 ? "🌟" : "💡"}
-                </span>
-                {feature}
+      {/* --- Why Choose Us? (Grid Layout) --- */}
+      <section className="section-features">
+        <div className="container">
+          <div className="section-header">
+            <h2 className="gradient-text">Why Top Rankers Choose Us</h2>
+            <p className="features-intro">
+              A curriculum designed for excellence, tailored for you. We go beyond
+              traditional teaching by integrating <strong>personalized analytics</strong>,
+              <strong>mental conditioning</strong>, and <strong>strategic exam simulations</strong>.
+              Our ecosystem is built to transform potential into performance, ensuring
+              every hour you spend counts towards your dream rank.
+            </p>
+          </div>
+
+          <div className="features-grid">
+            <div className="feature-card glass-effect">
+              <div className="icon-box">📚</div>
+              <h3>Comprehensive Coverage</h3>
+              <p>Master 100% of the NCERT syllabus with profound conceptual clarity. We deconstruct complex topics into intuitive, graspable logic.</p>
+            </div>
+            <div className="feature-card glass-effect">
+              <div className="icon-box">🎯</div>
+              <h3>Strategic Testing</h3>
+              <p>Rigorous weekly part-tests, cumulative revisions, and full-scale Grand Mocks designed to forge exam stamina and precision.</p>
+            </div>
+            <div className="feature-card glass-effect">
+              <div className="icon-box">💡</div>
+              <h3>Doubt Resolution</h3>
+              <p>A relentless doubt-clearing ecosystem featuring instant clarification and deep-dive error analysis to eliminate every weakness with speed.</p>
+            </div>
+            <div className="feature-card glass-effect">
+              <div className="icon-box">🧠</div>
+              <h3>Stress-Free Learning</h3>
+              <p>A meticulously curated environment that balances intense academic rigor with mental well-being for sustainable performance.</p>
+            </div>
+            <div className="feature-card glass-effect">
+              <div className="icon-box">📊</div>
+              <h3>Performance Tracking</h3>
+              <p>Cutting-edge AI analytics that track your progress, identify speed bottlenecks, and optimize your accuracy for peak scores.</p>
+            </div>
+            <div className="feature-card glass-effect">
+              <div className="icon-box">🔬</div>
+              <h3>Practical Mastery</h3>
+              <p>Specialized sessions for biological diagrams and lab-based questions ensuring you capture every mark in the practical domain.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* --- Roadmap / Timeline --- */}
+      <section className="section-roadmap">
+        <div className="container">
+          <h2 className="section-title-center">Your Road to AIIMS</h2>
+          <div className="roadmap-container">
+            <div className="roadmap-step">
+              <div className="step-number">01</div>
+              <div className="step-content">
+                <h3>Foundation (Months 1-2)</h3>
+                <p>Architecting a rock-solid base by mastering core NCERT concepts and fundamentals.</p>
               </div>
-            ))}
-          </div>
-        </section>
-
-        {/* --- Journey Timeline --- */}
-        <section className="neet-section timeline-section">
-          <h2 className="wow-title">Your Year-Long NEET Journey</h2>
-          <div className="timeline-journey">
-            <div className="timeline-step">
-              <div className="timeline-step-title">Months 1–2</div>
-              <div>Concept Foundation: Build strong basics and subject confidence.</div>
-              <svg className="timeline-arrow" viewBox="0 0 45 30">
-                <path d="M5,15 Q22.5,35 40,15" stroke="#2563eb" strokeWidth="2.5" fill="none" markerEnd="url(#arrowhead1)" />
-                <defs>
-                  <marker id="arrowhead1" markerWidth="6" markerHeight="6" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
-                    <path d="M0,0 L6,3 L0,6" fill="#2563eb" />
-                  </marker>
-                </defs>
-              </svg>
             </div>
-            <div className="timeline-step">
-              <div className="timeline-step-title">Months 3–6</div>
-              <div>Intensive Practice: Topic mastery and weekly mock tests.</div>
-              <svg className="timeline-arrow" viewBox="0 0 45 30">
-                <path d="M5,15 Q22.5,35 40,15" stroke="#2563eb" strokeWidth="2.5" fill="none" markerEnd="url(#arrowhead2)" />
-                <defs>
-                  <marker id="arrowhead2" markerWidth="6" markerHeight="6" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
-                    <path d="M0,0 L6,3 L0,6" fill="#2563eb" />
-                  </marker>
-                </defs>
-              </svg>
+            <div className="roadmap-connector"></div>
+            <div className="roadmap-step">
+              <div className="step-number">02</div>
+              <div className="step-content">
+                <h3>Application (Months 3-6)</h3>
+                <p>Intensive problem-solving marathons, topic-wise tests, and targeted weakness elimination.</p>
+              </div>
             </div>
-            <div className="timeline-step">
-              <div className="timeline-step-title">Months 7–10</div>
-              <div>Mock Marathon: Full-length tests and exam hall simulations.</div>
-              <svg className="timeline-arrow" viewBox="0 0 45 30">
-                <path d="M5,15 Q22.5,35 40,15" stroke="#2563eb" strokeWidth="2.5" fill="none" markerEnd="url(#arrowhead3)" />
-                <defs>
-                  <marker id="arrowhead3" markerWidth="6" markerHeight="6" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
-                    <path d="M0,0 L6,3 L0,6" fill="#2563eb" />
-                  </marker>
-                </defs>
-              </svg>
+            <div className="roadmap-connector"></div>
+            <div className="roadmap-step">
+              <div className="step-number">03</div>
+              <div className="step-content">
+                <h3>Mastery (Months 7-10)</h3>
+                <p>Advanced problem solving, grand tests, and high-pressure exam simulation drills.</p>
+              </div>
             </div>
-            <div className="timeline-step">
-              <div className="timeline-step-title">Months 11–12</div>
-              <div>Revision Power Weeks: Compact, high-yield final push.</div>
-              {/* No arrow after the last step */}
+            <div className="roadmap-connector"></div>
+            <div className="roadmap-step">
+              <div className="step-number">04</div>
+              <div className="step-content">
+                <h3>Final Sprint (Months 11-12)</h3>
+                <p>Rapid-fire revision, error log scrubbing, and final confidence boosters for peak performance.</p>
+              </div>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* --- Testimonials --- */}
-        <section className="neet-section testimonial-section">
-          <h2 className="wow-title">What Our Students Say</h2>
-          <div className="testimonial-carousel">
-            {testimonials.map((t, idx) => (
-              <div
-                key={idx}
-                className={`testimonial-card${ currentTestimonial === idx ? " active" : "" }`}
-                style={{
-                  opacity: currentTestimonial === idx ? 1 : 0,
-                  zIndex: currentTestimonial === idx ? 2 : 1,
-                }}
-              >
-                <blockquote>
-                  <em>"{t.message}"</em>
-                </blockquote>
-                <div className="testimonial-meta">
-                  <strong>{t.name}</strong> <span>- Score: {t.score}</span>
+      {/* --- Testimonials --- */}
+      <section className="section-testimonials">
+        <div className="container">
+          <h2 className="section-title-center">Success Stories</h2>
+          <div className="testimonials-row">
+            <div className="testimonial-card-modern">
+              <p className="t-text">"The personalized mentorship was a game changer. I knew exactly what to study and when."</p>
+              <div className="t-author">
+                <div className="t-avatar">S</div>
+                <div>
+                  <h4>Shreyas Medasani</h4>
+                  <span className="t-score">Score: 651/720</span>
                 </div>
               </div>
-            ))}
-            <div className="testimonial-indicators">
-              {testimonials.map((_, idx) => (
-                <button
-                  key={idx}
-                  className={`indicator-dot${ currentTestimonial === idx ? " active" : "" }`}
-                  onClick={() => setCurrentTestimonial(idx)}
-                  aria-label={`Show testimonial ${idx + 1}`}
-                />
-              ))}
+            </div>
+            <div className="testimonial-card-modern">
+              <p className="t-text">"Regular mock tests helped me overcome my exam fear. The faculty is incredible."</p>
+              <div className="t-author">
+                <div className="t-avatar">V</div>
+                <div>
+                  <h4>V. Videep</h4>
+                  <span className="t-score">Score: 645/720</span>
+                </div>
+              </div>
+            </div>
+            <div className="testimonial-card-modern">
+              <p className="t-text">"A stress-free environment that actually cares about students. Highly recommended!"</p>
+              <div className="t-author">
+                <div className="t-avatar">P</div>
+                <div>
+                  <h4>P. Sai Sree</h4>
+                  <span className="t-score">Score: 615/720</span>
+                </div>
+              </div>
             </div>
           </div>
-        </section>
-      
-        {/* --- Call To Action --- */}
-        <section className="neet-section cta-section">
-          <h2 className="wow-title">Ready to Begin Your NEET Journey?</h2>
-          <p>
-            Join our 2025–26 NEET Long-Term Program and start your preparation with
-            the best mentors and proven results.
-          </p>
-          <div className="cta-buttons">
-            <button className="apply-btn">📩 Apply Now</button>
-            <a
-              href="tel:+91918688124113"
-              className="contact-btn"
-              style={{ fontWeight: 500, display: "inline-block", textDecoration: "none" }}
-            >
-              📞 Contact us
-            </a>
-          </div>
-        </section>
-      </div>
+        </div>
+      </section>
+
+      {/* --- Final CTA --- */}
+      <section className="section-cta-final">
+        <div className="cta-content">
+          <h2>Don't Just Dream. Achieve.</h2>
+          <p>Limited seats available for the upcoming batch. Secure your future today.</p>
+          <button className="btn-white-pulse" onClick={() => window.location.href = '/contact'}>Start Your Journey</button>
+        </div>
+      </section>
+
       <Footer />
       <FooterCopyrightBar />
-    </>
+    </div>
   );
 }
