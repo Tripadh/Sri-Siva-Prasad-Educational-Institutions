@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom';
 import './Navbar.css';
+import logo from '../assets/navbar-logo.png';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 export default function Navbar() {
-  const logo = 'https://github.com/user-attachments/assets/0b48168e-8100-4369-bf16-f3098faedd1e';
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-white border-bottom shadow-sm py-2">
       <div className="container">
