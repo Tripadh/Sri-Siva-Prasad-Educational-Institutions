@@ -1,6 +1,6 @@
-Sri Siva Prasad Educational Institutions Website
+Sri Siva Prasad Institution of Sciences Website
 
-Welcome to the official website of Sri Siva Prasad Educational Institutions! This project brings a modern, responsive, and interactive online presence for the institution, built using React + Vite and deployed live for everyone to access.
+Welcome to the official website of Sri Siva Prasad Institution of Sciences! This project brings a modern, responsive, and interactive online presence for the institution, built using React + Vite and deployed live for everyone to access.
 
 🌟 Features
 

@@ -110,7 +110,7 @@ export default function Founder() {
             </div>
             <div className="story-section">
               <h4>Institution's Foundation</h4>
-              <p>Established Sri Siva Prasad Educational Institution as a holistic platform where discipline, hard work, and innovation converge to shape leaders of tomorrow. The institution focuses on critical thinking, problem-solving, and character building.</p>
+              <p>Established Sri Siva Prasad Institution of Sciences as a holistic platform where discipline, hard work, and innovation converge to shape leaders of tomorrow. The institution focuses on critical thinking, problem-solving, and character building.</p>
             </div>
             <div className="story-section">
               <h4>Student-Centered Approach</h4>
@@ -124,7 +124,7 @@ export default function Founder() {
         <div className="quote-container">
           <div className="quote-mark">"</div>
           <blockquote className="founder-quote-text">
-            Education is not just about clearing exams; it is about building confidence, discipline, and a mindset that can face any challenge in life. At Sri Siva Prasad Educational Institution, we don't just prepare students for success — we prepare them to lead.
+            Education is not just about clearing exams; it is about building confidence, discipline, and a mindset that can face any challenge in life. At Sri Siva Prasad Institution of Sciences, we don't just prepare students for success — we prepare them to lead.
           </blockquote>
           <div className="quote-author">
             <span className="author-name">— Ch. Siva Prasad</span>
