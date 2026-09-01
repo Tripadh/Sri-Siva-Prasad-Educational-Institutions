@@ -20,7 +20,6 @@ import slide2 from '../assets/slide-2.1.jpg';
 import slide3 from '../assets/slide-3.png';
 import slide4 from '../assets/slide-4.jpg';
 import slide5 from '../assets/slide-5.png';
-import slide6 from '../assets/slide-6.png';
 import slide7 from '../assets/slide-7.jpg';
 import building from '../assets/building.png';
 
@@ -34,7 +33,7 @@ import photo6 from '../assets/pardhu.png';
 import photo7 from '../assets/manoj.png';
 import photo8 from '../assets/mok.png';
 
-const HERO_SLIDES = [slide1, slide2, slide3, slide4, slide5, slide6, slide7];
+const HERO_SLIDES = [slide1, slide2, slide3, slide4, slide5, slide7];
 
 const STORIES = [
   { image: photo1, score: '651/720', exam: 'NEET', name: 'Shreyas Medasani', message: "The constant tests, clear concepts, and doubt sessions really pushed me forward scoring 651." },
