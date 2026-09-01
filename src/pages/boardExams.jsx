@@ -8,7 +8,7 @@ export default function BoardExams() {
       <div className="board-container">
         {/* Hero Section */}
         <section className="board-hero">
-          <h1>Board Exam Preparation - Sri Siva Prasad Institution of Sciences</h1>
+          <h1>Board Exam Preparation - Sri Siva Prasad Institute of Sciences</h1>
           <p>
             Excel in Intermediate Board Exams with conceptual clarity, personalized attention, and structured guidance from expert faculty.
           </p>

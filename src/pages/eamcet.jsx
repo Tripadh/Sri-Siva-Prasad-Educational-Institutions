@@ -55,7 +55,7 @@ export default function Eamcet() {
           <>
             {/* Hero Section */}
             <section className="eamcet-hero">
-              <h1>EAMCET Course - Sri Siva Prasad College</h1>
+              <h1>EAMCET Course - Sri Siva Prasad Institute of Sciences</h1>
               <p>Crack EAMCET with result-oriented strategies, strong fundamentals, and expert guidance.</p>
             </section>
 

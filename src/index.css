@@ -1,37 +1,40 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
 :root {
-  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
+  /* Modern White Theme Palette */
+  --primary-color: #0A192F;
+  --text-main: #111827;
+  --text-muted: #6B7280;
+  --bg-main: #FFFFFF;
+  --bg-alt: #F9FAFB;
+  --accent-blue: #2563EB;
+  --accent-light: #EFF6FF;
+  --accent-gradient: linear-gradient(135deg, #2563EB 0%, #3B82F6 100%);
+  --accent-gradient-text: linear-gradient(135deg, #2563EB 0%, #06b6d4 100%);
+  
+  /* Bootstrap Overrides */
+  --bs-body-font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  --bs-body-color: var(--text-main);
+  --bs-body-bg: var(--bg-main);
+  --bs-primary: var(--accent-blue);
+  --bs-link-color: var(--accent-blue);
+  --bs-link-hover-color: #1D4ED8;
+  --bs-border-radius: 1rem;
+  --bs-border-radius-lg: 1.5rem;
+  --bs-border-radius-xl: 2rem;
+  
+  /* Ultra-soft ambient shadows instead of sharp box shadows */
+  --bs-box-shadow-sm: 0 4px 20px rgba(0, 0, 0, 0.02);
+  --bs-box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+  --bs-box-shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.06);
+  
+  --soft-glow: 0 0 40px rgba(37, 99, 235, 0.15);
+
+  font-family: var(--bs-body-font-family);
+  line-height: 1.6;
   font-weight: 400;
 
-  /* Color Palette */
-  --primary-blue: #0A192F;
-  /* Deep Navy */
-  --secondary-blue: #112240;
-  /* Slightly lighter navy for sections */
-  --accent-blue: #233554;
-  /* Lighter accent */
-  --text-light: #CCD6F6;
-  /* Off-white text */
-  --text-dim: #8892b0;
-  /* Dimmed text */
-  --accent-gold: #FFD700;
-  /* Gold for highlights/CTAs */
-  --accent-teal: #64ffda;
-  /* Teal for accents */
-  --white: #ffffff;
-  --light-gray: #f8f9fa;
-
-  --glass-bg: rgba(255, 255, 255, 0.05);
-  --glass-border: rgba(255, 255, 255, 0.1);
-  --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.1);
-  --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.15);
-
   color-scheme: light;
-  color: var(--primary-blue);
-  background-color: var(--white);
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -48,24 +51,39 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  background-color: var(--white);
-  color: var(--primary-blue);
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  overflow-x: hidden;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: 700;
-  line-height: 1.2;
+/* Editorial Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--text-main);
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.03em;
+}
+
+.headline-huge {
+  font-size: clamp(3rem, 8vw, 5.5rem);
+  letter-spacing: -0.04em;
+  font-weight: 900;
+  line-height: 1.05;
+}
+
+.text-gradient-accent {
+  background: var(--accent-gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
 }
 
 a {
   text-decoration: none;
   color: inherit;
-  transition: color 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 button {
@@ -76,17 +94,189 @@ button {
 }
 
 /* Scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--bg-main); }
+::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+/* Utilities */
+.text-muted { color: var(--text-muted) !important; }
+
+/* =========================================
+   Premium Design Tokens
+   ========================================= */
+
+/* 1. Gradient Orbs for Backgrounds */
+.orb-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: none;
 }
 
-::-webkit-scrollbar-track {
-  background: var(--light-gray);
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.4;
+  z-index: 0;
 }
 
-::-webkit-scrollbar-thumb {
-  background: var(--accent-blue);
-  border-radius: 4px;
+.orb-primary {
+  background: rgba(37, 99, 235, 0.2); /* Blue */
+  width: 600px;
+  height: 600px;
+  top: -100px;
+  right: -200px;
 }
 
-[::-webkit-scrollbar-thumb:hover] {}
+.orb-secondary {
+  background: rgba(14, 165, 233, 0.2); /* Cyan */
+  width: 500px;
+  height: 500px;
+  bottom: -100px;
+  left: -200px;
+}
+
+.orb-accent {
+  background: rgba(245, 158, 11, 0.15); /* Orange/Amber */
+  width: 400px;
+  height: 400px;
+  top: 40%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* 2. Glass Cards */
+.glass-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: var(--bs-box-shadow-lg);
+  border-radius: var(--bs-border-radius-xl);
+}
+
+/* 3. Gradient Icon Badges */
+.gradient-icon-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--accent-gradient);
+  color: white;
+  box-shadow: 0 10px 20px rgba(37, 99, 235, 0.2), inset 0 -2px 5px rgba(0,0,0,0.1);
+  font-size: 1.75rem;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card:hover .gradient-icon-badge,
+.program-card:hover .gradient-icon-badge {
+  transform: scale(1.15) rotate(5deg);
+  box-shadow: 0 15px 30px rgba(37, 99, 235, 0.3), inset 0 -2px 5px rgba(0,0,0,0.1);
+}
+
+/* 4. Button Sheen Effect */
+.btn-primary {
+  background: var(--text-main);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-weight: 600;
+  padding: 0.8rem 2rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transition: left 0.6s ease;
+  z-index: -1;
+}
+
+.btn-primary:hover {
+  background: #000000;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.btn-primary:hover::before {
+  left: 100%;
+}
+
+/* Light button sheen */
+.btn-light {
+  background: white;
+  color: var(--text-main);
+  border: 1px solid rgba(0,0,0,0.05);
+  border-radius: 50px;
+  font-weight: 600;
+  box-shadow: var(--bs-box-shadow-sm);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.btn-light:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--bs-box-shadow);
+  color: var(--accent-blue);
+}
+
+/* 5. SVG Wave Dividers Utilities */
+.wave-divider-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: translateY(-99%);
+}
+.wave-divider-top svg {
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 60px;
+}
+
+.wave-divider-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: translateY(99%);
+}
+.wave-divider-bottom svg {
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 60px;
+}
+
+/* Ensure sections have relative positioning for absolute waves */
+.section, .relative {
+  position: relative;
+  z-index: 1;
+}

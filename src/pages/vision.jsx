@@ -10,7 +10,7 @@ const Footer = () => (
       <div className="footer-col footer-branding">
         <img src={foter} alt="Sri Siva Prasad Logo" className="footer-logo" />
         <p className="footer-desc">
-          Sri Siva Prasad Educational Institute, a premier institution nurturing excellence, has been inspiring academic success across Vijayawada and neighboring regions since 2016.
+          Sri Siva Prasad Institute of Sciences, a premier institution nurturing excellence, has been inspiring academic success across Vijayawada and neighboring regions since 2016.
         </p>
         <p className="footer-tagline">Determination | Progress | Service</p>
         <p className="footer-policy">
@@ -71,7 +71,7 @@ export default function Vision() {
           <p className="vision-lead">
             To awaken brilliance — not just by teaching lessons, but by lighting minds.<br />
             We envision a world where every student walks in with curiosity and walks out with clarity, confidence, and purpose.<br />
-            Sri Siva Prasad Institution strives to be more than a place of education — it’s a movement that shapes thinkers, dreamers, innovators, and leaders who don’t wait for the future… they build it.
+            Sri Siva Prasad Institute of Sciences strives to be more than a place of education — it’s a movement that shapes thinkers, dreamers, innovators, and leaders who don’t wait for the future… they build it.
           </p>
           <p className="vision-sublead">
             We dream of classrooms that spark imagination, mentors who ignite self-belief, and an institution that doesn’t just produce achievers — it produces impact-makers.
@@ -81,7 +81,7 @@ export default function Vision() {
         <section className="vision-values">
           <h3 className="vision-subheading">Our Promise</h3>
           <p className="vision-lead">
-            At Sri Siva Prasad Institution, every student matters.<br />
+            At Sri Siva Prasad Institute of Sciences, every student matters.<br />
             Every question is heard.<br />
             Every dream is nurtured.<br />
             Because education isn’t a race here — it’s a journey of growth, courage, and becoming your best self.

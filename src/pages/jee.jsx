@@ -124,7 +124,7 @@ export default function Courses() {
           <>
             {/* Hero Section */}
             <section className="hero-area">
-              <h1>JEE Main & Advanced — Sri Siva Prasad College.</h1>
+              <h1>JEE Main & Advanced — Sri Siva Prasad Institute of Sciences.</h1>
               <p className="hero-tagline">
                 Master the foundation to IIT success with us.
               </p>

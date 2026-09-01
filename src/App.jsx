@@ -1,5 +1,6 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { Analytics } from '@vercel/analytics/react';
+import { AnimatePresence, motion, useScroll } from 'framer-motion';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';  // Bootstrap JS for menu & carousel
 
 import Navbar from './pages/Navbar';
@@ -16,57 +17,92 @@ import NeetLongTerm from './pages/neetlong';
 import Faculty from './pages/faculty';
 import Contact from './pages/contact';
 
-// ⭐ ADDED: ScrollToTop import (fixes footer quick links not scrolling up)
-import ScrollToTop from './components/ScrollToTop';   // <-- FIX ADDED HERE
+import ScrollToTop from './components/ScrollToTop';
+import PageTransition from './components/PageTransition';
+import Chatbot from './components/Chatbot';
 
 function Management() {
   return (
-    <div className="container mt-5">
-      <h2>Our Management</h2>
-      <p>Information about management team.</p>
-    </div>
+    <PageTransition>
+      <div className="container mt-5">
+        <h2>Our Management</h2>
+        <p>Information about management team.</p>
+      </div>
+    </PageTransition>
+  );
+}
+
+function AnimatedRoutes() {
+  const location = useLocation();
+  
+  return (
+    <AnimatePresence mode="wait">
+      <Routes location={location} key={location.pathname}>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<PageTransition><About /></PageTransition>} />
+        <Route path="/founder" element={<PageTransition><Founder /></PageTransition>} />
+        <Route path="/management" element={<Management />} />
+        <Route path="/vision" element={<PageTransition><VisionMission /></PageTransition>} />
+        <Route path="/vision-mission" element={<PageTransition><VisionMission /></PageTransition>} />
+        <Route path="/faculty" element={<PageTransition><Faculty /></PageTransition>} />
+
+        {/* Courses routes */}
+        <Route path="/jee" element={<PageTransition><JeeCourses /></PageTransition>} />
+        <Route path="/neet" element={<PageTransition><NeetCourses /></PageTransition>} />
+        <Route path="/eamcet" element={<PageTransition><EamcetCourses /></PageTransition>} />
+        <Route path="/board-exams" element={<PageTransition><BoardExams /></PageTransition>} />
+        <Route path="/neet-longterm" element={<PageTransition><NeetLongTerm /></PageTransition>} />
+
+        <Route path="/contact" element={<PageTransition><Contact /></PageTransition>} />
+
+        {/* 404 Fallback */}
+        <Route
+          path="*"
+          element={
+            <PageTransition>
+              <div className="container mt-5">
+                <h2>404 Not Found</h2>
+              </div>
+            </PageTransition>
+          }
+        />
+      </Routes>
+    </AnimatePresence>
+  );
+}
+
+function ScrollProgressBar() {
+  const { scrollYProgress } = useScroll();
+  return (
+    <motion.div
+      style={{
+        scaleX: scrollYProgress,
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        right: 0,
+        height: '4px',
+        background: 'var(--accent-gradient)',
+        transformOrigin: '0%',
+        zIndex: 9999
+      }}
+    />
   );
 }
 
 export default function App() {
   return (
     <Router>
+      <ScrollProgressBar />
       <Navbar />
-      <Marquee /> {/* Add Marquee below Navbar */}
+      <Marquee />
 
-      {/* ⭐ ADDED: Auto-scroll to top on page change */}
-      <ScrollToTop />   {/* <-- FIX ADDED HERE */}
+      <ScrollToTop />
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/founder" element={<Founder />} />
-        <Route path="/management" element={<Management />} />
-        <Route path="/vision" element={<VisionMission />} />
-        <Route path="/vision-mission" element={<VisionMission />} />
-        <Route path="/faculty" element={<Faculty />} />
-
-        {/* Courses routes */}
-        <Route path="/jee" element={<JeeCourses />} />
-        <Route path="/neet" element={<NeetCourses />} />
-        <Route path="/eamcet" element={<EamcetCourses />} />
-        <Route path="/board-exams" element={<BoardExams />} />
-        <Route path="/neet-longterm" element={<NeetLongTerm />} />
-
-        <Route path="/contact" element={<Contact />} />
-
-        {/* 404 Fallback */}
-        <Route
-          path="*"
-          element={
-            <div className="container mt-5">
-              <h2>404 Not Found</h2>
-            </div>
-          }
-        />
-      </Routes>
+      <AnimatedRoutes />
 
       <Analytics />
+      <Chatbot />
     </Router>
   );
 }

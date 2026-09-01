@@ -28,7 +28,7 @@ export default function NeetLongTerm() {
             Crack NEET with <span className="highlight-text">Certainty</span>
           </h1>
           <p className="hero-subtitle">
-            Sri Siva Prasad Educational Institute presents the ultimate Long-Term
+            Sri Siva Prasad Institute of Sciences presents the ultimate Long-Term
             Program. Expert mentorship, rigorous practice, and a proven path to
             your dream medical college.
           </p>

@@ -1,785 +1,214 @@
-/* Global Section Styles */
+/* Home.css - Premium Overrides & Custom Styles */
+
 .home-container {
   width: 100%;
   overflow-x: hidden;
   position: relative;
+  background-color: var(--bg-alt);
 }
 
-.section {
-  padding: 60px 20px;
-  max-width: 1200px;
-  margin: 0 auto;
+/* =========================================
+   1. HERO SECTION 
+   ========================================= */
+.hero-swiper .swiper-button-next,
+.hero-swiper .swiper-button-prev {
+  color: #fff;
+  opacity: 0.2;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.hero-swiper:hover .swiper-button-next,
+.hero-swiper:hover .swiper-button-prev {
+  opacity: 1;
 }
 
-.section-title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: var(--primary-blue);
-  text-align: center;
-  margin-bottom: 1rem;
-}
-
-.section-subtitle {
-  font-size: 1.1rem;
-  color: var(--text-dim);
-  text-align: center;
-  max-width: 600px;
-  margin: 0 auto 3rem;
-}
-
-/* 1. HERO SECTION */
-.hero-section {
-  position: relative;
-  height: 90vh;
-  min-height: 600px;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  /* Removed static background image/size here as it's handled by .hero-bg */
-  color: var(--white);
-  text-align: center;
-  overflow: hidden;
-}
-
-/* Hero Background Slides */
-.hero-bg {
+/* Premium gradient mask to seamlessly blend hero to next section */
+.hero-gradient-mask {
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
   width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
+  height: 250px;
+  background: linear-gradient(to top, var(--bg-alt) 0%, rgba(249, 250, 251, 0) 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Premium Floating Stat Card */
+.premium-glass-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(255,255,255,0.4) inset;
+  border-radius: 24px;
+  position: relative;
+  overflow: hidden;
+}
+.premium-glass-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 4px;
+  background: var(--accent-gradient);
+}
+
+/* =========================================
+   2. TRUST STRIP
+   ========================================= */
+.trust-strip {
+  margin-top: -80px; /* Overlap the hero section */
+  padding-bottom: 60px;
+}
+
+/* =========================================
+   3. PROGRAMS CARDS
+   ========================================= */
+.premium-program-card {
+  border: 1px solid rgba(0,0,0,0.04);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
+}
+
+.premium-program-card::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  border-radius: inherit;
+  box-shadow: 0 20px 40px rgba(37, 99, 235, 0.12);
   opacity: 0;
-  transition: opacity 1.5s ease-in-out;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.premium-program-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  border-color: rgba(37, 99, 235, 0.2);
+}
+
+.premium-program-card:hover::after {
+  opacity: 1;
+}
+
+/* =========================================
+   4. FEATURES TIMELINE
+   ========================================= */
+.premium-feature-item {
+  position: relative;
+}
+
+.feature-connecting-line {
+  position: absolute;
+  left: 28px;
+  top: 56px;
+  bottom: -40px;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--accent-blue) 0%, rgba(37,99,235,0.1) 100%);
   z-index: 0;
 }
 
-/* Slider Navigation Buttons */
-.slider-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(255, 255, 255, 0.2);
-  color: white;
-  border: none;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  font-size: 1.5rem;
-  cursor: pointer;
-  z-index: 10;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(5px);
-  opacity: 0;
-  /* Hidden by default, shown on hover of section ideally, or always visible? User asked for buttons, let's keep visible or fade in */
-  opacity: 0.6;
-}
-
-.hero-section:hover .slider-btn {
-  opacity: 1;
-}
-
-.slider-btn:hover {
-  background: rgba(255, 255, 255, 0.4);
-  transform: translateY(-50%) scale(1.1);
-}
-
-.prev-btn {
-  left: 20px;
-}
-
-.next-btn {
-  right: 20px;
-}
-
-/* Mobile adjustments for slider buttons */
-@media (max-width: 768px) {
-  .slider-btn {
-    width: 40px;
-    height: 40px;
-    font-size: 1.2rem;
-    opacity: 0.8;
-    /* Always visible on mobile */
-  }
-
-  .prev-btn {
-    left: 10px;
-  }
-
-  .next-btn {
-    right: 10px;
-  }
-}
-
-.hero-bg.active {
-  opacity: 1;
-  /* Removed zoom effect for better mobile performance and stability */
-  /* animation: bgZoom 6s infinite alternate; */
-}
-
-@keyframes bgZoom {
-  from {
-    transform: scale(1);
-  }
-
-  to {
-    transform: scale(1.05);
-  }
-}
-
-/* Hero Overlay Removed for clear image view */
-.hero-overlay {
-  display: none;
-}
-
-.hero-content {
-  position: absolute;
-  /* Changed from relative to absolute to overlay correctly */
-  bottom: 10%;
-  /* Position from bottom instead of top margin */
-  left: 0;
-  width: 100%;
-  z-index: 2;
-  max-width: 1200px;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
-  animation: fadeInUp 1s ease-out;
-  pointer-events: none;
-  /* Allow clicks pass through to potential underlying elements if needed, but enable for children */
-}
-
-/* Re-enable pointer events for buttons */
-.hero-content>* {
-  pointer-events: auto;
-}
-
-.hero-badge {
-  display: inline-block;
-  background: rgba(255, 215, 0, 0.2);
-  color: var(--accent-gold);
-  padding: 8px 16px;
-  border-radius: 50px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  margin-bottom: 20px;
-  border: 1px solid rgba(255, 215, 0, 0.3);
-  backdrop-filter: blur(5px);
-}
-
-.hero-title {
-  font-size: 4rem;
-  line-height: 1.1;
-  margin-bottom: 20px;
-  font-weight: 800;
-  letter-spacing: -1px;
-}
-
-.hero-subtitle {
-  font-size: 1.25rem;
-  margin-bottom: 40px;
-  color: rgba(255, 255, 255, 0.9);
-  line-height: 1.6;
-}
-
-.hero-cta-group {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-}
-
-.btn-primary {
-  background-color: var(--accent-gold);
-  color: var(--primary-blue);
-  padding: 16px 32px;
-  border-radius: 8px;
-  font-weight: 700;
-  font-size: 1rem;
-  transition: transform 0.2s, box-shadow 0.2s;
-  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
-}
-
-.btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
-}
-
-.btn-secondary {
-  background-color: transparent;
-  color: var(--white);
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  padding: 14px 30px;
-  border-radius: 8px;
-  font-weight: 600;
-  font-size: 1rem;
-  transition: all 0.2s;
-}
-
-.btn-secondary:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  border-color: var(--white);
-}
-
-/* Hero CTA Strip (Below Slideshow) */
-.hero-cta-strip {
-  background: #ffffff;
-  padding: 30px 0;
-  text-align: center;
-  border-bottom: 1px solid #eaeaea;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+.features-list {
   position: relative;
-  z-index: 5;
+  padding-left: 10px;
 }
 
-.hero-cta-strip .hero-cta-group {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 25px;
-  flex-wrap: wrap;
-}
-
-/* Enhanced Button Styles for Strip */
-.hero-cta-strip .btn-primary {
-  background: linear-gradient(135deg, #FFC107 0%, #FF9800 100%);
-  color: #000;
-  font-weight: 700;
-  padding: 14px 40px;
-  border-radius: 50px;
-  box-shadow: 0 4px 15px rgba(255, 152, 0, 0.3);
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  border: none;
-  font-size: 1rem;
-}
-
-.hero-cta-strip .btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(255, 152, 0, 0.4);
-  background: linear-gradient(135deg, #FF9800 0%, #F57C00 100%);
-}
-
-.hero-cta-strip .btn-secondary {
-  background: #fff;
-  color: #0d47a1 !important;
-  /* Force override inline styles if any */
-  border: 2px solid #0d47a1 !important;
-  font-weight: 700;
-  padding: 12px 35px;
-  border-radius: 50px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  font-size: 1rem;
-  box-shadow: 0 4px 10px rgba(13, 71, 161, 0.1);
-}
-
-.hero-cta-strip .btn-secondary:hover {
-  background: #0d47a1;
-  color: #fff !important;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 15px rgba(13, 71, 161, 0.2);
-}
-
-/* 2. TRUST STRIP */
-.trust-strip {
-  background-color: var(--white);
-  padding: 40px 20px;
-  border-bottom: 1px solid #eee;
-}
-
-.trust-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  gap: 30px;
-}
-
-.trust-item {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-
-.trust-icon {
-  font-size: 2rem;
-  color: var(--primary-blue);
-  background: rgba(10, 25, 47, 0.05);
-  padding: 15px;
-  border-radius: 50%;
-}
-
-.trust-text h4 {
-  font-size: 1.5rem;
-  color: var(--primary-blue);
-  margin-bottom: 2px;
-}
-
-.trust-text p {
-  color: var(--text-dim);
-  font-size: 0.9rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-/* 3. PROGRAMS */
-.programs-section {
-  background-color: #f8fbff;
-}
-
-.programs-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-}
-
-.program-card {
-  background: var(--white);
-  padding: 40px;
-  border-radius: 16px;
-  box-shadow: var(--shadow-sm);
-  transition: transform 0.3s, box-shadow 0.3s;
-  border: 1px solid rgba(0, 0, 0, 0.03);
+/* =========================================
+   5. WALL OF FAME (TESTIMONIALS)
+   ========================================= */
+.premium-testimonial-card {
+  background: #FFFFFF;
+  border: 1px solid rgba(0,0,0,0.05);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
   position: relative;
   overflow: hidden;
 }
 
-.program-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 4px;
-  background: var(--primary-blue);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.3s ease;
+.premium-testimonial-card.active {
+  background: linear-gradient(145deg, #FFFFFF 0%, #F8FAFC 100%);
+  border: 1px solid rgba(37, 99, 235, 0.2);
+  box-shadow: 0 20px 50px rgba(37, 99, 235, 0.1), inset 0 1px 0 rgba(255,255,255,1);
 }
 
-.program-card:hover {
-  transform: translateY(-10px);
-  box-shadow: var(--shadow-lg);
+.premium-testimonial-highlight {
+  color: var(--accent-blue) !important;
 }
 
-.program-card:hover::before {
-  transform: scaleX(1);
+/* Swiper Overrides for Light Mode */
+.success-slider .swiper-pagination-bullet {
+  background: rgba(0,0,0,0.1);
+}
+.success-slider .swiper-pagination-bullet-active {
+  background: var(--accent-blue);
+}
+.success-slider .swiper-button-next,
+.success-slider .swiper-button-prev {
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--accent-blue);
+  border: 1px solid rgba(0,0,0,0.1);
+  backdrop-filter: blur(10px);
+}
+.success-slider .swiper-button-next:hover,
+.success-slider .swiper-button-prev:hover {
+  background: var(--text-main);
+  color: white;
+  border-color: var(--text-main);
 }
 
-.program-icon {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-  color: var(--primary-blue);
+/* =========================================
+   6. CTA SECTION
+   ========================================= */
+.premium-cta-gradient {
+  background: linear-gradient(135deg, #0A192F 0%, #000000 100%);
+  position: relative;
+  border-top: 2px solid rgba(255,115,0,0.5);
 }
 
-.program-title {
-  font-size: 1.5rem;
-  margin-bottom: 15px;
-  color: var(--primary-blue);
-}
-
-.program-desc {
-  color: var(--text-dim);
-  margin-bottom: 25px;
-  line-height: 1.6;
-}
-
-.card-link {
-  color: var(--primary-blue);
-  font-weight: 600;
+.premium-btn-magnetic {
   display: inline-flex;
   align-items: center;
-  gap: 5px;
-}
-
-.card-link:hover {
-  gap: 10px;
-}
-
-/* 4. WHY CHOOSE US */
-.why-us-section {
-  background-color: var(--white);
-}
-
-.features-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 40px;
-  align-items: center;
-}
-
-.features-left img {
-  width: 100%;
-  border-radius: 20px;
-  box-shadow: var(--shadow-lg);
-}
-
-.features-list {
-  display: grid;
-  gap: 30px;
-}
-
-.feature-item {
-  display: flex;
-  gap: 20px;
-  align-items: flex-start;
-}
-
-.feature-icon-box {
-  background: rgba(100, 255, 218, 0.1);
-  color: #0b4f40;
-  /* darker teal */
-  min-width: 60px;
-  height: 60px;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
   justify-content: center;
-  font-size: 1.25rem;
-}
-
-.feature-content h3 {
-  font-size: 1.25rem;
-  margin-bottom: 8px;
-  color: var(--primary-blue);
-}
-
-.feature-content p {
-  color: var(--text-dim);
-  font-size: 0.95rem;
-  line-height: 1.6;
-}
-
-/* 5. RESULTS */
-.results-section {
-  background-color: var(--secondary-blue);
-  color: var(--white);
-  padding-bottom: 100px;
-}
-
-.results-section .section-title {
-  color: var(--white);
-}
-
-.results-section .section-subtitle {
-  color: var(--text-light);
-  opacity: 0.8;
-}
-
-.success-slider-container {
-  overflow: hidden;
-  width: 100%;
-  padding: 20px 0 40px 0;
-  position: relative;
-  /* Mask edges for a fading effect */
-  mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
-  -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
-}
-
-.success-track {
-  display: flex;
-  gap: 30px;
-  width: max-content;
-  animation: scrollStories 45s linear infinite;
-}
-
-.success-slider-container:hover .success-track {
-  animation-play-state: paused;
-}
-
-@keyframes scrollStories {
-  0% {
-    transform: translateX(0);
-  }
-
-  100% {
-    transform: translateX(-50%);
-    /* Move half the width (one full set of items) */
-  }
-}
-
-.success-card {
-  min-width: 350px;
-  background: rgba(255, 255, 255, 0.05);
-  /* Glass effect */
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 16px;
-  padding: 30px;
-  scroll-snap-align: center;
-  transition: transform 0.3s;
-}
-
-.success-card:hover {
-  transform: translateY(-5px);
-  background: rgba(255, 255, 255, 0.08);
-}
-
-.student-profile {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  margin-bottom: 20px;
-}
-
-.student-img {
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid var(--accent-gold);
-}
-
-.student-info h4 {
-  font-size: 1.1rem;
-  margin-bottom: 4px;
-}
-
-.exam-pill {
-  background: rgba(255, 215, 0, 0.2);
-  color: var(--accent-gold);
-  font-size: 0.75rem;
-  padding: 4px 10px;
-  border-radius: 20px;
-  font-weight: 600;
-  display: inline-block;
-  margin-top: 5px;
-}
-
-.score-display {
-  font-size: 2.5rem;
-  font-weight: 800;
-  color: var(--white);
-  margin-bottom: 5px;
-}
-
-.score-label {
-  font-size: 0.9rem;
-  color: var(--text-light);
-  opacity: 0.7;
-  margin-bottom: 15px;
-  display: block;
-}
-
-.quote {
-  font-style: italic;
-  color: var(--text-light);
-  font-size: 0.95rem;
-  line-height: 1.6;
-}
-
-/* 6. CALL TO ACTION */
-.cta-section {
-  background: linear-gradient(135deg, var(--primary-blue) 0%, #1a2a44 100%);
-  color: var(--white);
-  text-align: center;
-  padding: 100px 20px;
+  background: #FF7300;
+  color: white;
+  border-radius: 50px;
+  text-decoration: none;
   position: relative;
   overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(255, 115, 0, 0.3);
 }
 
-.cta-content {
-  position: relative;
-  z-index: 2;
-  max-width: 700px;
-  margin: 0 auto;
+.premium-btn-magnetic::before {
+  content: '';
+  position: absolute;
+  top: -2px; left: -2px; right: -2px; bottom: -2px;
+  background: linear-gradient(45deg, transparent, rgba(255,255,255,0.8), transparent);
+  z-index: -1;
+  border-radius: 50px;
+  animation: borderGlow 3s linear infinite;
 }
 
-.cta-title {
-  font-size: 3rem;
-  margin-bottom: 20px;
-  font-weight: 800;
+.premium-btn-magnetic:hover {
+  background: #ff851a;
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(255, 115, 0, 0.5);
+  color: white;
 }
 
-.cta-subtitle {
-  font-size: 1.2rem;
-  margin-bottom: 40px;
-  color: var(--text-light);
-  opacity: 0.9;
+@keyframes borderGlow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
-/* Footer Adjustments (Overrides) */
-.footer {
-  background-color: var(--primary-blue);
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-/* Animations */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Responsiveness */
-@media (max-width: 992px) {
-  .hero-title {
-    font-size: 3rem;
-  }
-
-  .features-grid {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
-
-  .features-left {
-    display: block;
-    margin-bottom: 20px;
-  }
+/* Typography scale utilities for Home */
+.fw-black {
+  font-weight: 900;
 }
 
 @media (max-width: 768px) {
-  .section {
-    padding: 40px 15px;
-    /* Reduced padding for mobile */
-  }
-
-  .section-title {
-    font-size: 2rem;
-  }
-
-  /* Hero Mobile Optimizations */
   .hero-section {
-    height: auto;
-    min-height: unset;
-    aspect-ratio: 16/9;
-    /* Standard slide ratio to prevent gaps */
-    width: 100%;
+    height: 70vh !important;
+    min-height: 500px !important;
   }
-
-  .hero-bg {
-    background-size: cover;
-    /* Ensure image fills the container */
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-
-  .hero-content {
-    justify-content: flex-end;
-    padding-bottom: 20px;
-    background: transparent;
-    /* Removed gradient to avoid dullness */
-  }
-
-  .hero-title {
-    font-size: 2.2rem;
-  }
-
-  .hero-subtitle {
-    font-size: 1rem;
-    margin-bottom: 25px;
-  }
-
-  .hero-cta-group {
-    flex-direction: column;
-    width: 100%;
-    max-width: 350px;
-    gap: 15px;
-  }
-
-  .hero-cta-strip {
-    padding: 25px 15px;
-    /* Adjust padding for mobile */
-  }
-
-  .hero-cta-strip .btn-primary,
-  .hero-cta-strip .btn-secondary {
-    width: 100%;
-    padding: 14px 20px;
-    text-align: center;
-    font-size: 1rem;
-    display: flex;
-    /* Ensure centering */
-    justify-content: center;
-    align-items: center;
-  }
-
-  /* Trust Strip Mobile */
-  .trust-content {
-    flex-direction: row;
-    /* Keep row but wrap */
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-  }
-
-  .trust-item {
-    flex-direction: column;
-    /* Stack icon and text */
-    text-align: center;
-    padding: 10px;
-    min-width: 120px;
-  }
-
-  .trust-text h4 {
-    font-size: 1.2rem;
-  }
-
-  /* Programs Mobile */
-  .programs-grid {
-    grid-template-columns: 1fr;
-    /* Single column */
-    gap: 20px;
-  }
-
-  .program-card {
-    padding: 25px;
-  }
-
-  /* Results Mobile */
-  .success-card {
-    min-width: 85vw;
-    /* Almost full width cards */
-    padding: 20px;
-  }
-
-  .success-slider {
-    padding-left: 20px;
-    /* Peek effect */
-  }
-
-  /* Features Mobile */
-  .features-list {
-    gap: 20px;
-  }
-
-  .feature-item {
-    align-items: flex-start;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero-bg {
-    /* For portrait phones, 'contain' usually leaves big whitespace if image is landscape. 
-       If image is portrait (like the student card), 'contain' is good. 
-       Let's assume mixed Aspect Ratios and prioritize seeing the whole slide content. */
-    background-size: contain;
-    background-position: center 10%;
-    /* Move up a bit */
-  }
-
-  .hero-content {
-    /* Ensure buttons are at the bottom, not covering the main center content */
-    justify-content: flex-end;
-    padding-bottom: 20px;
-  }
-
-  .section-title {
-    font-size: 1.75rem;
+  .trust-strip {
+    margin-top: -40px;
   }
 }

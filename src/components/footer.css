@@ -1,10 +1,23 @@
 .footer {
-  background: #0f0f0f;
+  background: linear-gradient(135deg, #111827 0%, #000000 100%);
   color: #fff;
-  padding: 60px 0 30px 0;
+  padding: 80px 0 40px 0;
   font-family: 'Segoe UI', Arial, sans-serif;
   width: 100%;
   overflow-x: hidden;
+  border-top: 4px solid #FF7300;
+  position: relative;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at top right, rgba(255, 115, 0, 0.05), transparent 40%);
+  pointer-events: none;
 }
 
 .footer-container {
@@ -13,146 +26,234 @@
   justify-content: space-between;
   align-items: flex-start;
   max-width: 1400px;
-  margin: 10px auto;
-  width: 95vw;
-  /* Prevents overflow at large screens */
+  margin: 0 auto;
+  width: 90vw;
+  gap: 40px;
+  position: relative;
+  z-index: 1;
 }
 
 .footer-col {
   flex: 1 1 300px;
-  min-width: 220px;
-  margin: 0 14px;
+  min-width: 250px;
 }
 
 .footer-logo {
   width: 100%;
-  max-width: 300px;
-  min-width: 100px;
-  margin-bottom: 18px;
-  height: auto;
+  max-width: 260px;
+  margin-bottom: 24px;
   display: block;
+  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
+  transition: transform 0.3s ease;
+}
+
+.footer-logo:hover {
+  transform: translateY(-3px);
 }
 
 .footer-desc {
-  font-size: 20px;
-  font-weight: 600;
-  margin-bottom: 16px;
-  color: #fff;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: #9ca3af;
 }
 
 .footer-tagline {
   color: #FF7300;
-  font-weight: 600;
-  font-size: 19px;
-  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 24px;
+  letter-spacing: 1px;
 }
 
 .footer-policy {
-  color: #fff;
-  font-size: 16px;
-  margin-bottom: 10px;
+  color: #6b7280;
+  font-size: 14px;
+  margin-bottom: 8px;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+.footer-policy:hover {
+  color: #FF7300;
 }
 
 .footer-heading {
-  font-size: 29px;
+  font-size: 24px;
   font-weight: 700;
-  margin-bottom: 16px;
-  color: #fff;
+  margin-bottom: 24px;
+  color: #ffffff;
   letter-spacing: 0.5px;
-  border-bottom: 3px solid #FF7300;
-  padding-bottom: 5px;
-  display: inline-block;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+.footer-heading::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background: #FF7300;
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.footer-col:hover .footer-heading::after {
+  width: 80px;
 }
 
 .footer-links ul {
   list-style: none;
   padding: 0px;
+  margin: 0;
 }
 
 .footer-links li {
-  font-size: 18px;
-  font-weight: 500;
-  color: #ccc;
-  margin-bottom: 15px;
+  margin-bottom: 16px;
 }
 
 .footer-links a {
-  color: #fff;
+  color: #9ca3af;
   text-decoration: none;
-  transition: color 0.3s ease;
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+}
+
+.footer-links a::before {
+  content: '›';
+  color: #FF7300;
+  font-size: 20px;
+  margin-right: 8px;
+  transition: transform 0.3s ease;
+  transform: translateX(0);
 }
 
 .footer-links a:hover {
-  color: #FF7300;
+  color: #ffffff;
+  transform: translateX(5px);
+}
+
+.footer-links a:hover::before {
+  transform: translateX(3px);
 }
 
 .footer-contact-header {
-  font-size: 29px;
-  font-weight: 800;
-  margin-bottom: 18px;
-  color: #fff;
-  letter-spacing: 0.5px;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: #ffffff;
 }
 
 .footer-contact {
-  font-size: 18px;
+  font-size: 16px;
+  line-height: 1.6;
 }
 
 .footer-contact p {
-  margin: 7px 0;
-  color: #fff;
+  margin: 0 0 16px 0;
+  color: #9ca3af;
 }
 
 .footer-email,
 .footer-phone {
   color: #FF7300;
   font-weight: 600;
-  font-size: 18px;
+  font-size: 16px;
+  transition: color 0.3s ease;
+  cursor: pointer;
 }
 
-@media (max-width: 1000px) {
-  .footer-container {
-    flex-direction: column;
-    width: 90%;
-    /* Better width for mobile */
-    max-width: 90%;
-    margin: 0 auto;
-    padding: 20px 0;
-  }
-
-  .footer-col {
-    min-width: 100%;
-    /* Full width columns */
-    margin: 0 0 30px 0;
-    text-align: center;
-    /* Center align for mobile */
-  }
-
-  .footer-logo {
-    margin: 0 auto 15px auto;
-    /* Center logo */
-  }
-
-  .footer-heading {
-    border-bottom: 2px solid #FF7300;
-    /* Thinner line */
-    display: inline-block;
-    /* Keep inline for border */
-  }
-
-  .footer-desc,
-  .footer-contact-header {
-    font-size: 1.1rem;
-  }
+.footer-email:hover,
+.footer-phone:hover {
+  color: #ffffff;
+  text-shadow: 0 0 8px rgba(255,115,0,0.5);
 }
 
 .footer-copyright-bar {
-  background: #313133;
-  color: #bebebe;
+  background: #000000;
+  color: #6b7280;
   text-align: center;
-  padding: 18px 0 16px 0;
-  font-size: 19px;
+  padding: 24px 0;
+  font-size: 15px;
   font-family: 'Segoe UI', Arial, sans-serif;
   width: 100%;
-  overflow-x: hidden;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+@media (max-width: 1000px) {
+  .footer {
+    padding: 60px 0 30px 0;
+  }
+  
+  .footer-container {
+    flex-direction: column;
+    width: 90%;
+    gap: 40px;
+  }
+
+  .footer-col {
+    width: 100%;
+    margin: 0;
+  }
+
+  .footer-heading::after {
+    left: 0;
+  }
+}
+
+/* Animated Waves Background */
+.footer-waves {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.footer-wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 200%;
+  height: 100%;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 88.7'%3E%3Cpath d='M800 56.9c-155.5 0-204.9-50-405.5-49.9-200 0-250 49.9-394.5 49.9v31.8h800v-.2-31.6z' fill='%23ffffff' fill-opacity='0.05'/%3E%3C/svg%3E") repeat-x;
+  background-size: 50% 100%;
+  filter: blur(3px); /* Softens the edges to look exactly like fog */
+}
+
+.footer-wave1 {
+  animation: moveWave 15s linear infinite;
+  z-index: 1;
+  opacity: 1;
+  bottom: 0;
+}
+
+.footer-wave2 {
+  animation: moveWave 20s linear infinite;
+  z-index: 2;
+  opacity: 0.6;
+  bottom: 10px;
+  background-size: 50% 80%;
+}
+
+.footer-wave3 {
+  animation: moveWave 25s linear infinite;
+  z-index: 3;
+  opacity: 0.3;
+  bottom: 20px;
+  background-size: 50% 60%;
+}
+
+@keyframes moveWave {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }

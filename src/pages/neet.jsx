@@ -79,7 +79,7 @@ export default function Neet() {
         {!showCurriculum ? (
           <>
             <section className="neet-hero">
-              <h1>NEET Course - Sri Siva Prasad College</h1>
+              <h1>NEET Course - Sri Siva Prasad Institute of Sciences</h1>
               <p>Preparing you thoroughly for NEET with expert faculty and comprehensive curriculum.</p>
             </section>
             <section className="neet-unique">

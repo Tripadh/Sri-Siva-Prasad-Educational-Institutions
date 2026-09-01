@@ -6,11 +6,16 @@ import './footer.css';
 export function Footer() {
   return (
     <footer className="footer">
+      <div className="footer-waves">
+        <div className="footer-wave footer-wave1"></div>
+        <div className="footer-wave footer-wave2"></div>
+        <div className="footer-wave footer-wave3"></div>
+      </div>
       <div className="footer-container">
         <div className="footer-col footer-branding">
           <img src={foter} alt="Sri Siva Prasad Logo" className="footer-logo" />
           <p className="footer-desc">
-            Sri Siva Prasad Educational Institute, a premier institution nurturing excellence, has been inspiring academic success across Vijayawada and neighboring regions since 2016.
+            Sri Siva Prasad Institute of Sciences, a premier institution nurturing excellence, has been inspiring academic success across Vijayawada and neighboring regions since 2016.
           </p>
           <p className="footer-tagline">Determination | Progress | Service</p>
           <p className="footer-policy">
