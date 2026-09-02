@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import './About.css';
 import aboutImage from '../assets/about.png';
-import aboutImage2 from '../assets/about2.jpg';
+import aboutImage2 from '../assets/about2.png';
 import { Footer, FooterCopyrightBar } from '../components/footer';
 import ScrollReveal from '../components/ScrollReveal';
 
